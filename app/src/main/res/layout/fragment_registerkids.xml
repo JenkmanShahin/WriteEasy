@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="276dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/register_kidsbachground" />
+
+        <ImageView
+            android:id="@+id/Register_Gif_kids"
+            android:layout_width="425dp"
+            android:layout_height="247dp"
+            android:layout_marginTop="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.666"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kids_registergif" />
+
+        <EditText
+            android:id="@+id/PersonName_text"
+            android:layout_width="154dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="64dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Register_Gif_kids" />
+
+        <EditText
+            android:id="@+id/SurName_text"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="64dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="SurName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.157"
+            app:layout_constraintStart_toEndOf="@+id/PersonName_text"
+            app:layout_constraintTop_toBottomOf="@+id/Register_Gif_kids" />
+
+        <EditText
+            android:id="@+id/Email_kids"
+            android:layout_width="373dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="48dp"
+            android:ems="10"
+            android:inputType="textEmailAddress"
+            app:layout_constraintEnd_toEndOf="@+id/SurName_text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/PersonName_text"
+            app:layout_constraintTop_toBottomOf="@+id/PersonName_text" />
+
+        <EditText
+            android:id="@+id/Password_Kids"
+            android:layout_width="373dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:ems="10"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="@+id/Email_kids"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Email_kids"
+            app:layout_constraintTop_toBottomOf="@+id/Email_kids" />
+
+        <ImageButton
+            android:id="@+id/Register_Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/Password_Kids"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/Password_Kids"
+            app:srcCompat="@drawable/register_screenkids"
+            tools:layout_editor_absoluteY="580dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="76dp"
+        android:layout_height="68dp"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginVertical="4dp"
+        app:cardBackgroundColor="@color/white">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="76dp"
+            android:layout_height="68dp">
+
+            <ImageView
+                android:id="@+id/KidsStory_image"
+                android:layout_width="76dp"
+                android:layout_height="72dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/allreadread_kids"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginStart="56dp"
+                app:layout_constraintBottom_toBottomOf="@+id/KidsStory_image"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/ic_baseline_check_circle_24" />
+
+            <ImageView
+                android:id="@+id/TitleandText"
+                android:layout_width="75dp"
+                android:layout_height="26dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="1dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/KidsStory_image"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/KidsStory_image"
+                app:srcCompat="@drawable/titlebar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+</layout>

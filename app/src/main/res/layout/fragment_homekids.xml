@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/HomeKids_Background_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/kids_homebackground" />
+
+        <TextView
+            android:id="@+id/AlreadyRead_text"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="306dp"
+            android:fontFamily="@font/risque"
+            android:text="Already Read"
+            android:textColor="#2523B7"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="100dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/AlreadyRead_recyclerView"
+            android:layout_width="250dp"
+            android:layout_height="216dp"
+            android:layout_marginTop="32dp"
+            android:foregroundGravity="center_horizontal"
+            android:orientation="horizontal"
+            android:scrollbars="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AlreadyRead_text"
+            tools:listitem="@layout/alreadyread_list" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/risque"
+            android:text="All Stories"
+            android:textColor="#2523B7"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.078"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/AlreadyRead_recyclerView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/allStories_recyclerView"
+            android:layout_width="341dp"
+            android:layout_height="210dp"
+            android:layout_marginTop="8dp"
+            android:scrollbars="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="307dp"
+            android:layout_height="42dp"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toTopOf="@+id/AlreadyRead_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/HomeKids_Background_image"
+            app:layout_constraintVertical_bias="0.421"
+            app:srcCompat="@drawable/search" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

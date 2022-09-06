@@ -1,10 +1,9 @@
-package de.syntaxinstitut.myapplication
+package de.syntaxinstitut.writeeasy
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.NavController
-import de.syntaxinstitut.myapplication.databinding.ActivityMainBinding
+import de.syntaxinstitut.writeeasy.databinding.ActivityMainBinding
 
 /**
  * Main Activity, dient als Einstiegspunkt für die App

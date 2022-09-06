@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/background_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/start_backgroundpic" />
+
+        <ImageView
+            android:id="@+id/startScreen_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.32"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/startscreen" />
+
+        <ImageView
+            android:id="@+id/ForKids"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="@+id/startScreen_image"
+            app:layout_constraintTop_toBottomOf="@+id/startScreen_image"
+            app:srcCompat="@drawable/kids3_6" />
+
+        <ImageView
+            android:id="@+id/ForTeen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="80dp"
+            app:layout_constraintEnd_toEndOf="@+id/startScreen_image"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/ForKids"
+            app:layout_constraintTop_toBottomOf="@+id/startScreen_image"
+            app:srcCompat="@drawable/teen7_14" />
+
+        <ImageButton
+            android:id="@+id/Register_Button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:backgroundTint="#00F4F1F1"
+            app:layout_constraintEnd_toEndOf="@+id/ForTeen"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ForKids"
+            app:srcCompat="@drawable/register_buttonkids" />
+
+        <ImageButton
+            android:id="@+id/LohIn_Button_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toEndOf="@+id/ForTeen"
+            app:layout_constraintHorizontal_bias="0.931"
+            app:layout_constraintStart_toStartOf="@+id/Register_Button_start"
+            app:layout_constraintTop_toBottomOf="@+id/Register_Button_start"
+            app:srcCompat="@drawable/start_login_buttonstart" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
