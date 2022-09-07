@@ -36,10 +36,10 @@ class LogInKidsFragment: Fragment(R.layout.fragment_loginkids) {
             val password = binding.Password.text.toString()
 
             if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
-                viewModel.login()
+                viewModel.login(email, password)
             }
         }
 
-        viewModel.
+
     }
 }
