@@ -7,24 +7,22 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
-import de.syntaxinstitut.writeeasy.databinding.FragmentStartBinding
+import de.syntaxinstitut.writeeasy.databinding.FragmentRegisterkidsBinding
 
-class StartFragment: Fragment(R.layout.fragment_start) {
-
-
-    private lateinit var binding: FragmentStartBinding
+class RegisterKidsFragment: Fragment(R.layout.fragment_registerkids) {
 
     private val viewModel: MainViewModel by activityViewModels()
+
+    private lateinit var binding: FragmentRegisterkidsBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_registerkids, container, false)
 
         return binding.root
     }
@@ -32,12 +30,16 @@ class StartFragment: Fragment(R.layout.fragment_start) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.registerButtonStart.setOnClickListener{
-            findNavController().navigate(StartFragmentDirections.actionStartFragmentToLogInKidsFragment2())
+        binding.RegisterButton.setOnClickListener{
+            val name = binding.PersonNameText.text.toString()
+            val surname = binding.SurNameText.text.toString()
+            val email = binding.EmailKids.text.toString()
+            val password = binding.PasswordKids.text.toString()
         }
 
-        binding.LohInButtonStart.setOnClickListener{
-            findNavController().navigate(StartFragmentDirections.actionStartFragmentToRegisterKidsFragment2())
+        binding.RegisterButton.setOnClickListener{
+            viewModel.register()
         }
+
     }
 }

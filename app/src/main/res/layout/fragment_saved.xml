@@ -1,74 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="vertical">
 
-    <data>
+    <ImageView
+        android:id="@+id/BackgroundS_image"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/savedscreen_background" />
 
-    </data>
+    <ImageView
+        android:id="@+id/savedMenu_frame"
+        android:layout_width="0dp"
+        android:layout_height="442dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/kidsstory_menu" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/MyFavorite_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/risque"
+        android:text="My Favorites"
+        android:textColor="#2523B7"
+        android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/savedMenu_frame"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.935" />
 
-        <ImageView
-            android:id="@+id/AllStories_frame"
-            android:layout_width="416dp"
-            android:layout_height="549dp"
-            android:scaleType="fitXY"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
-            app:srcCompat="@drawable/kidsstory_menu" />
-
-        <ImageView
-            android:id="@+id/StoryAndImage_frame"
-            android:layout_width="321dp"
-            android:layout_height="108dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.288"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/AllStories_frame"
-            app:srcCompat="@drawable/kids" />
-
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="@+id/StoryAndImage_frame"
-            app:layout_constraintTop_toTopOf="@+id/StoryAndImage_frame"
-            app:srcCompat="@drawable/kids_storypicframe" />
-
-        <TextView
-            android:id="@+id/Title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/risque"
-            android:text="Title"
-            android:textColor="#2523B7"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@+id/StoryAndImage_frame"
-            app:layout_constraintHorizontal_bias="0.328"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
-            app:layout_constraintTop_toTopOf="@+id/StoryAndImage_frame" />
-
-        <TextView
-            android:id="@+id/description_text"
-            android:layout_width="135dp"
-            android:layout_height="55dp"
-            android:fontFamily="@font/risque"
-            android:text="Lorem ipsum dolor sit amet, consetetur sadised  invidunt ut labore"
-            android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/Title_text"
-            app:layout_constraintHorizontal_bias="0.291"
-            app:layout_constraintStart_toStartOf="@+id/Title_text"
-            app:layout_constraintTop_toBottomOf="@+id/Title_text" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/Saved_recyclerView"
+        android:layout_width="339dp"
+        android:layout_height="375dp"
+        android:orientation="vertical"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/savedMenu_frame"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="@+id/savedMenu_frame"
+        app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
+        app:layout_constraintVertical_bias="0.257"
+        tools:listitem="@layout/saved_list" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,14 +8,21 @@
     <fragment
         android:id="@+id/startFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.StartFragment"
-        android:label="StartFragment" />
+        android:label="StartFragment" >
+        <action
+            android:id="@+id/action_startFragment_to_register_KidsFragment2"
+            app:destination="@id/register_KidsFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_logIn_KidsFragment2"
+            app:destination="@id/logIn_KidsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/home_TeenFragment_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.Home_KidsFragment"
         android:label="Home_KidsFragment" />
     <fragment
         android:id="@+id/logIn_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.LogIn_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.LogInKidsFragment"
         android:label="LogIn_KidsFragment" />
     <fragment
         android:id="@+id/home_TeenFragment"
@@ -35,7 +42,7 @@
         android:label="Record_kidsFragment" />
     <fragment
         android:id="@+id/register_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.Register_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.RegisterKidsFragment"
         android:label="Register_KidsFragment" />
     <fragment
         android:id="@+id/saved_KidsFragment"
@@ -49,4 +56,8 @@
         android:id="@+id/writingNew_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.WritingNew_KidsFragment"
         android:label="WritingNew_KidsFragment" />
+    <fragment
+        android:id="@+id/homeKidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.HomeKidsFragment"
+        android:label="HomeKidsFragment" />
 </navigation>

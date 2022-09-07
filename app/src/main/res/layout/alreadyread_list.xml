@@ -8,20 +8,21 @@
     </data>
 
     <com.google.android.material.card.MaterialCardView
-        android:layout_width="76dp"
-        android:layout_height="68dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="12dp"
         android:layout_marginVertical="4dp"
+        android:layout_marginTop="5dp"
         app:cardBackgroundColor="@color/white">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="76dp"
-            android:layout_height="68dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <ImageView
                 android:id="@+id/KidsStory_image"
-                android:layout_width="76dp"
-                android:layout_height="72dp"
+                android:layout_width="75dp"
+                android:layout_height="71dp"
                 android:adjustViewBounds="true"
                 android:src="@drawable/allreadread_kids"
                 app:layout_constraintBottom_toBottomOf="parent"

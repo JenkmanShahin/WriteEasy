@@ -9,17 +9,19 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="112dp"
+        tools:layout_marginTop="20dp">
 
         <ImageView
             android:id="@+id/StoryAndImage_frame"
             android:layout_width="321dp"
-            android:layout_height="110dp"
+            android:layout_height="108dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:srcCompat="@drawable/kids"
-            tools:layout_editor_absoluteY="-3dp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/kids" />
 
         <ImageView
             android:id="@+id/imageView4"
@@ -53,7 +55,7 @@
             android:text="Lorem ipsum dolor sit amet, consetetur sadised  invidunt ut labore"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/Title_text"
-            app:layout_constraintHorizontal_bias="0.291"
+            app:layout_constraintHorizontal_bias="0.388"
             app:layout_constraintStart_toStartOf="@+id/Title_text"
             app:layout_constraintTop_toBottomOf="@+id/Title_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>

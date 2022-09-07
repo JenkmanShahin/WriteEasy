@@ -7,15 +7,13 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
-import de.syntaxinstitut.writeeasy.databinding.FragmentStartBinding
+import de.syntaxinstitut.writeeasy.databinding.FragmentLoginkidsBinding
 
-class StartFragment: Fragment(R.layout.fragment_start) {
+class LogInKidsFragment: Fragment(R.layout.fragment_loginkids) {
 
-
-    private lateinit var binding: FragmentStartBinding
+    private lateinit var binding: FragmentLoginkidsBinding
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -24,7 +22,7 @@ class StartFragment: Fragment(R.layout.fragment_start) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_start, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_loginkids, container, false)
 
         return binding.root
     }
@@ -32,12 +30,16 @@ class StartFragment: Fragment(R.layout.fragment_start) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.registerButtonStart.setOnClickListener{
-            findNavController().navigate(StartFragmentDirections.actionStartFragmentToLogInKidsFragment2())
+
+        binding.LogInButtonkids.setOnClickListener{
+            val email = binding.Email.text.toString()
+            val password = binding.Password.text.toString()
+
+            if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
+                viewModel.login()
+            }
         }
 
-        binding.LohInButtonStart.setOnClickListener{
-            findNavController().navigate(StartFragmentDirections.actionStartFragmentToRegisterKidsFragment2())
-        }
+        viewModel.
     }
 }

@@ -1,6 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/Background_image"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/kidsstories_background" />
+
+        <ImageView
+            android:id="@+id/Story_frame"
+            android:layout_width="334dp"
+            android:layout_height="613dp"
+            app:layout_constraintBottom_toBottomOf="@+id/Background_image"
+            app:layout_constraintEnd_toEndOf="@+id/Background_image"
+            app:layout_constraintHorizontal_bias="0.493"
+            app:layout_constraintStart_toStartOf="@+id/Background_image"
+            app:layout_constraintTop_toTopOf="@+id/Background_image"
+            app:layout_constraintVertical_bias="0.254"
+            app:srcCompat="@drawable/newstory_frame_k" />
+
+        <Button
+            android:id="@+id/Write_button"
+            android:layout_width="50dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="24dp"
+            android:backgroundTint="@color/green"
+            app:icon="@drawable/ic_baseline_border_color_24"
+            app:layout_constraintStart_toStartOf="@+id/Story_frame"
+            tools:layout_editor_absoluteY="15dp" />
+
+        <Button
+            android:id="@+id/Record_button"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/orange"
+            app:icon="@drawable/ic_baseline_mic_none_24"
+            app:layout_constraintBottom_toBottomOf="@+id/Write_button"
+            app:layout_constraintStart_toEndOf="@+id/Write_button"
+            app:layout_constraintTop_toTopOf="@+id/Write_button" />
+
+        <Button
+            android:id="@+id/Save_button"
+            android:layout_width="50dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/orange"
+            app:icon="@drawable/ic_baseline_bookmark_border_24"
+            app:layout_constraintBottom_toBottomOf="@+id/Play_button"
+            app:layout_constraintStart_toEndOf="@+id/Play_button"
+            app:layout_constraintTop_toTopOf="@+id/Play_button" />
+
+        <Button
+            android:id="@+id/Play_button"
+            android:layout_width="50dp"
+            android:layout_height="42dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/green"
+            app:icon="@drawable/ic_baseline_play_circle_outline_24"
+            app:layout_constraintBottom_toBottomOf="@+id/Record_button"
+            app:layout_constraintStart_toEndOf="@+id/Record_button"
+            app:layout_constraintTop_toTopOf="@+id/Record_button" />
+
+        <Button
+            android:id="@+id/Cancle_button"
+            android:layout_width="50dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="5dp"
+            android:backgroundTint="@color/green"
+            app:icon="@drawable/ic_baseline_close_24"
+            app:layout_constraintBottom_toBottomOf="@+id/Save_button"
+            app:layout_constraintEnd_toEndOf="@+id/Story_frame"
+            app:layout_constraintHorizontal_bias="0.135"
+            app:layout_constraintStart_toEndOf="@+id/Save_button"
+            app:layout_constraintTop_toTopOf="@+id/Save_button" />
+
+        <ImageView
+            android:id="@+id/Cover_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/Story_frame"
+            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintStart_toStartOf="@+id/Story_frame"
+            app:layout_constraintTop_toBottomOf="@+id/Play_button"
+            app:srcCompat="@drawable/addstorypic_k" />
+
+        <ImageView
+            android:id="@+id/Space_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="@+id/Story_frame"
+            app:layout_constraintHorizontal_bias="0.401"
+            app:layout_constraintStart_toStartOf="@+id/Story_frame"
+            app:layout_constraintTop_toBottomOf="@+id/Cover_frame"
+            app:srcCompat="@drawable/space_line" />
+
+        <Button
+            android:id="@+id/AddPic_button"
+            android:layout_width="53dp"
+            android:layout_height="44dp"
+            android:backgroundTint="#CBCAF5"
+            android:shadowColor="#504C4C"
+            app:icon="@drawable/ic_baseline_add_circle_outline_24"
+            app:layout_constraintBottom_toBottomOf="@+id/Cover_frame"
+            app:layout_constraintEnd_toEndOf="@+id/Cover_frame"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/Cover_frame" />
+
+        <ImageView
+            android:id="@+id/Title_frame"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:layout_constraintEnd_toEndOf="@+id/Story_frame"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="@+id/Story_frame"
+            app:layout_constraintTop_toBottomOf="@+id/Space_line"
+            app:srcCompat="@drawable/storytitle_frame_k" />
+
+        <Button
+            android:id="@+id/recordS_button"
+            android:layout_width="50dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="12dp"
+            app:icon="@drawable/ic_baseline_mic_none_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Story_frame"
+            app:layout_constraintVertical_bias="0.324" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -47,10 +47,11 @@
             android:id="@+id/LogIn_Buttonkids"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:backgroundTint="#00FFFFFF"
             app:layout_constraintEnd_toEndOf="@+id/Password"
             app:layout_constraintStart_toStartOf="@+id/Password"
-            app:srcCompat="@drawable/login_screenkids"
-            tools:layout_editor_absoluteY="561dp" />
+            app:layout_constraintTop_toBottomOf="@+id/Password"
+            app:srcCompat="@drawable/login_screenkids" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

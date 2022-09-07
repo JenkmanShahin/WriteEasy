@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "555274757045",
+    "project_id": "write-easy-27eb5",
+    "storage_bucket": "write-easy-27eb5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:555274757045:android:03353b489dc30e9800effc",
+        "android_client_info": {
+          "package_name": "de.syntaxinstitut.writeeasy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "555274757045-kgvi3868s31up7h0mpchl7khsri5bq8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "de.syntaxinstitut.writeeasy",
+            "certificate_hash": "ac5ec1f795fedf77f1cccb60dcf1cb633903e2f2"
+          }
+        },
+        {
+          "client_id": "555274757045-9cfkc1cdr7qud5addra7neuafio1u6sm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4iLFc1loZFxOnWbU-NHKH07YWkr3geXI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "555274757045-9cfkc1cdr7qud5addra7neuafio1u6sm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
