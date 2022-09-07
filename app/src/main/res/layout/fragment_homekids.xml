@@ -95,14 +95,5 @@
             app:layout_constraintTop_toTopOf="@+id/HomeKids_Background_image"
             app:srcCompat="@drawable/search" />
 
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/home_kidsbutton"
-            tools:layout_editor_absoluteX="245dp"
-            tools:layout_editor_absoluteY="356dp" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

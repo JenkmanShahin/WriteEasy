@@ -35,11 +35,10 @@ class RegisterKidsFragment: Fragment(R.layout.fragment_registerkids) {
             val surname = binding.SurNameText.text.toString()
             val email = binding.EmailKids.text.toString()
             val password = binding.PasswordKids.text.toString()
-        }
 
-        binding.RegisterButton.setOnClickListener{
-            viewModel.register()
+            if (!name.isNullOrEmpty() && !surname.isNullOrEmpty() && !email.isNullOrEmpty() && !password.isNullOrEmpty()) {
+                viewModel.register(email, password)
+            }
         }
-
     }
 }
