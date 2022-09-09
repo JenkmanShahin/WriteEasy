@@ -7,7 +7,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.databinding.FragmentRegisterkidsBinding
@@ -17,7 +16,6 @@ class RegisterKidsFragment: Fragment(R.layout.fragment_registerkids) {
     private val viewModel: MainViewModel by activityViewModels()
 
     private lateinit var binding: FragmentRegisterkidsBinding
-    private var age: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,25 +30,15 @@ class RegisterKidsFragment: Fragment(R.layout.fragment_registerkids) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.forKids.setOnClickListener{
-            age = "forKids"
-        }
-
-        binding.forTeen.setOnClickListener{
-            age = "forTeen"
+        binding.RegisterButton.setOnClickListener{
+            val name = binding.PersonNameText.text.toString()
+            val surname = binding.SurNameText.text.toString()
+            val email = binding.EmailKids.text.toString()
+            val password = binding.PasswordKids.text.toString()
         }
 
         binding.RegisterButton.setOnClickListener{
-            val email = binding.EmailText.text.toString()
-            val password = binding.PasswordText.text.toString()
-
-            if (!email.isNullOrEmpty() && !password.isNullOrEmpty()) {
-                viewModel.register(email, password)
-            }
-        }
-
-        binding.RegisterButton.setOnClickListener{
-            findNavController().navigate(RegisterKidsFragmentDirections.actionRegisterKidsFragmentToHomeKidsFragment())
+            viewModel.register()
         }
 
     }
