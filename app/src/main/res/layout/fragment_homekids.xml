@@ -59,43 +59,40 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp"
             android:fontFamily="@font/risque"
             android:text="All Stories"
             android:textColor="#2523B7"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.052"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/AlreadyRead_recyclerView" />
+            app:layout_constraintStart_toStartOf="parent" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="435dp"
+            android:layout_width="410dp"
             android:layout_height="421dp"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="@+id/HomeKids_Background_image"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView"
-            app:layout_constraintVertical_bias="1.0"
             app:srcCompat="@drawable/kidsstory_menu" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/allStories_recyclerView"
-            android:layout_width="388dp"
-            android:layout_height="241dp"
+            android:layout_width="408dp"
+            android:layout_height="420dp"
+            android:layout_marginBottom="1dp"
             android:foregroundGravity="center_vertical"
             android:orientation="vertical"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.15"
             tools:listitem="@layout/allstories_kids_list" />
 
         <ImageView
@@ -108,15 +105,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_segment_24" />
-
-        <ImageButton
-            android:id="@+id/imageButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="#00FFFFFF"
-            app:srcCompat="@drawable/home_kidsbutton"
-            tools:layout_editor_absoluteX="245dp"
-            tools:layout_editor_absoluteY="356dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
