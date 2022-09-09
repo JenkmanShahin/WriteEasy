@@ -31,14 +31,9 @@ class RegisterKidsFragment: Fragment(R.layout.fragment_registerkids) {
         super.onViewCreated(view, savedInstanceState)
 
         binding.RegisterButton.setOnClickListener{
-            val name = binding.PersonNameText.text.toString()
-            val surname = binding.SurNameText.text.toString()
-            val email = binding.EmailKids.text.toString()
-            val password = binding.PasswordKids.text.toString()
-        }
-
-        binding.RegisterButton.setOnClickListener{
-            viewModel.register()
+            val email = binding.EmailText.text.toString()
+            val password = binding.PasswordText.text.toString()
+            viewModel.register(email, password)
         }
 
     }
