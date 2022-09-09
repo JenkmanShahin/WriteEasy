@@ -17,6 +17,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val dataSource = DataSource()
 
+    private val _readStories = MutableLiveData<List<Story>>()
+    val readStories: LiveData<List<Story>>
+    get() = _readStories
+
     private val _stories = MutableLiveData<List<Story>>()
     val stories: LiveData<List<Story>>
         get() = _stories
@@ -24,6 +28,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     init {
         _stories.value = dataSource.loadStories()
     }
+
+    init {
+        _readStories.value = dataSource.allReadyread()
+    }
+
+
 
     private val _currentUser = MutableLiveData<FirebaseUser>(firebaseAuth.currentUser)
     val currentUser: LiveData<FirebaseUser>

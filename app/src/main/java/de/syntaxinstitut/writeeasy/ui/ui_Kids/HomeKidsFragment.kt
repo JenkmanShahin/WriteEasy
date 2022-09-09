@@ -42,6 +42,13 @@ class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
             }
         )
 
+        viewModel.readStories.observe(
+            viewLifecycleOwner,
+            Observer {
+                binding.alreadyReadRecyclerView.adapter = AllStoriesAdapter(it)
+            }
+        )
+
     }
 
 }

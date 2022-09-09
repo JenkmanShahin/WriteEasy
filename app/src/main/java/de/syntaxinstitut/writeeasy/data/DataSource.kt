@@ -37,4 +37,42 @@ class DataSource {
             )
         )
     }
+
+    fun allReadyread(): List<Story> {
+        return listOf(
+            Story(
+                1,
+                "by Johny",
+                "Me & my Sis",
+                R.drawable.drawings,
+                ""
+
+            ),
+            Story(
+                2,
+                "by Joudi",
+                "Bestfriends",
+                R.drawable.kid,
+                ""
+
+
+            ),
+            Story(
+                3,
+                "by Sali",
+                "Scribble",
+                R.drawable.bestfriends,
+                ""
+
+            ),
+            Story(
+                4,
+                "by Tomy",
+                "Hero",
+                R.drawable.profilepic,
+                ""
+
+            )
+        )
+    }
 }
