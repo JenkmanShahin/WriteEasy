@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/ConstrainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="145dp"
+            android:layout_marginHorizontal="4dp"
+            android:layout_marginTop="1dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="?attr/colorOnPrimary"
+            app:cardCornerRadius="0dp"
+            app:cardElevation="4dp"
+            app:contentPadding="8dp">
+
+
+            <TextView
+                android:id="@+id/Descrition_text"
+                android:layout_width="200dp"
+                android:layout_height="61dp"
+                android:fontFamily="@font/risque"
+                android:text="Lorem ipsum dolor sit amet, consetetur sadised  invidunt ut labore"
+                android:textColor="#040303"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/Story_image"
+                app:layout_constraintTop_toBottomOf="@+id/Title_text"
+                app:layout_constraintVertical_bias="0.375" />
+
+            <TextView
+                android:id="@+id/Title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/risque"
+                android:text="Title"
+                android:textColor="#2523B7"
+                android:textSize="24sp"
+                app:layout_constraintStart_toEndOf="@+id/Story_image"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/Story_image"
+                android:layout_width="145dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="16dp"
+                android:clickable="false"
+                android:cropToPadding="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.48"
+                app:srcCompat="@drawable/firststory" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>

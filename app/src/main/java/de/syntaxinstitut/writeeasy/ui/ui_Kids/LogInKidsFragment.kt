@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.databinding.FragmentLoginkidsBinding
@@ -32,14 +34,25 @@ class LogInKidsFragment: Fragment(R.layout.fragment_loginkids) {
 
 
         binding.LogInButtonkids.setOnClickListener{
-            val email = binding.Email.text.toString()
-            val password = binding.Password.text.toString()
+            val email = binding.LogInemailText.text.toString()
+            val password = binding.LogInpasswordText.text.toString()
 
             if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
                 viewModel.login(email, password)
             }
         }
 
+        viewModel.currentUser.observe(
+            viewLifecycleOwner,
+            Observer {
+                if (it != null) {
+                    findNavController().navigate(R.id.homeKidsFragment)
+                }
+            }
+        )
 
+        binding.LogInButtonkids.setOnClickListener{
+            findNavController().navigate(LogInKidsFragmentDirections.actionLogInKidsFragmentToHomeKidsFragment())
+        }
     }
 }

@@ -18,43 +18,51 @@
     </fragment>
     <fragment
         android:id="@+id/home_TeenFragment_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.Home_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.HomeKidsFragment"
         android:label="Home_KidsFragment" />
     <fragment
         android:id="@+id/logIn_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.LogInKidsFragment"
-        android:label="LogIn_KidsFragment" />
+        android:label="LogIn_KidsFragment" >
+        <action
+            android:id="@+id/action_logIn_KidsFragment_to_homeKidsFragment"
+            app:destination="@id/homeKidsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/home_TeenFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Teen.Home_TeenFragment"
         android:label="Home_TeenFragment" />
     <fragment
         android:id="@+id/play_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.Play_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.PlayKidsFragment"
         android:label="Play_KidsFragment" />
     <fragment
         android:id="@+id/profile_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.Profile_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.ProfileKidsFragment"
         android:label="Profile_KidsFragment" />
     <fragment
         android:id="@+id/record_kidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.Record_kidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.RecordkidsFragment"
         android:label="Record_kidsFragment" />
     <fragment
         android:id="@+id/register_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.RegisterKidsFragment"
-        android:label="Register_KidsFragment" />
+        android:label="Register_KidsFragment" >
+        <action
+            android:id="@+id/action_register_KidsFragment_to_homeKidsFragment"
+            app:destination="@id/homeKidsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/saved_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.Saved_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.SavedKidsFragment"
         android:label="Saved_KidsFragment" />
     <fragment
         android:id="@+id/storyShow_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.StoryShow_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.StoryShowKidsFragment"
         android:label="StoryShow_KidsFragment" />
     <fragment
         android:id="@+id/writingNew_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.WritingNew_KidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.WritingNewKidsFragment"
         android:label="WritingNew_KidsFragment" />
     <fragment
         android:id="@+id/homeKidsFragment"

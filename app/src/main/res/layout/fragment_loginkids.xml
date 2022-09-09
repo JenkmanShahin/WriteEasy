@@ -20,38 +20,40 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/login_pic" />
 
-        <EditText
-            android:id="@+id/Email"
-            android:layout_width="373dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="48dp"
-            android:ems="10"
-            android:inputType="textEmailAddress"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/logIn_image_kids" />
-
-        <EditText
-            android:id="@+id/Password"
-            android:layout_width="373dp"
-            android:layout_height="46dp"
-            android:layout_marginTop="36dp"
-            android:ems="10"
-            android:inputType="textPassword"
-            app:layout_constraintEnd_toEndOf="@+id/Email"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/Email"
-            app:layout_constraintTop_toBottomOf="@+id/Email" />
-
         <ImageButton
             android:id="@+id/LogIn_Buttonkids"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="44dp"
             android:backgroundTint="#00FFFFFF"
-            app:layout_constraintEnd_toEndOf="@+id/Password"
-            app:layout_constraintStart_toStartOf="@+id/Password"
-            app:layout_constraintTop_toBottomOf="@+id/Password"
+            app:layout_constraintEnd_toEndOf="@+id/LogInpassword_Text"
+            app:layout_constraintTop_toBottomOf="@+id/LogInpassword_Text"
             app:srcCompat="@drawable/login_screenkids" />
+
+        <EditText
+            android:id="@+id/LogInemail_Text"
+            android:layout_width="350dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="52dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="E-Mail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.491"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/logIn_image_kids" />
+
+        <EditText
+            android:id="@+id/LogInpassword_Text"
+            android:layout_width="350dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Password"
+            app:layout_constraintEnd_toEndOf="@+id/LogInemail_Text"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/LogInemail_Text"
+            app:layout_constraintTop_toBottomOf="@+id/LogInemail_Text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

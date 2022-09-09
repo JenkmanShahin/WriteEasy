@@ -7,12 +7,23 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import de.syntaxinstitut.writeeasy.data.DataSource
+import de.syntaxinstitut.writeeasy.data.model.Story
 
 const val TAG = "MAINVIEWMODEL"
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
+    private val dataSource = DataSource()
+
+    private val _stories = MutableLiveData<List<Story>>()
+    val stories: LiveData<List<Story>>
+        get() = _stories
+
+    init {
+        _stories.value = dataSource.loadStories()
+    }
 
     private val _currentUser = MutableLiveData<FirebaseUser>(firebaseAuth.currentUser)
     val currentUser: LiveData<FirebaseUser>
