@@ -55,7 +55,14 @@
     <fragment
         android:id="@+id/saved_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.SavedKidsFragment"
-        android:label="Saved_KidsFragment" />
+        android:label="Saved_KidsFragment" >
+        <action
+            android:id="@+id/action_saved_KidsFragment_to_profile_KidsFragment"
+            app:destination="@id/profile_KidsFragment" />
+        <action
+            android:id="@+id/action_saved_KidsFragment_to_homeKidsFragment"
+            app:destination="@id/homeKidsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/storyShow_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.StoryShowKidsFragment"
@@ -67,5 +74,12 @@
     <fragment
         android:id="@+id/homeKidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.HomeKidsFragment"
-        android:label="HomeKidsFragment" />
+        android:label="HomeKidsFragment" >
+        <action
+            android:id="@+id/action_homeKidsFragment_to_saved_KidsFragment"
+            app:destination="@id/saved_KidsFragment" />
+        <action
+            android:id="@+id/action_homeKidsFragment_to_profile_KidsFragment"
+            app:destination="@id/profile_KidsFragment" />
+    </fragment>
 </navigation>

@@ -1,56 +1,104 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:scrollbars="vertical">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/BackgroundS_image"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/savedscreen_background" />
+    <data>
 
-    <ImageView
-        android:id="@+id/savedMenu_frame"
-        android:layout_width="0dp"
-        android:layout_height="442dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/kidsstory_menu" />
+    </data>
 
-    <TextView
-        android:id="@+id/MyFavorite_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/risque"
-        android:text="My Favorites"
-        android:textColor="#2523B7"
-        android:textSize="32sp"
-        app:layout_constraintBottom_toTopOf="@+id/savedMenu_frame"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.935" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/Saved_recyclerView"
-        android:layout_width="339dp"
-        android:layout_height="375dp"
-        android:orientation="vertical"
-        android:scrollbars="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/savedMenu_frame"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="@+id/savedMenu_frame"
-        app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
-        app:layout_constraintVertical_bias="0.257"
-        tools:listitem="@layout/saved_list" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/BackgroundS_image"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/savedscreen_background" />
+
+        <ImageView
+            android:id="@+id/savedMenu_frame"
+            android:layout_width="415dp"
+            android:layout_height="491dp"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/kidsstory_menu" />
+
+        <TextView
+            android:id="@+id/MyFavorite_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="176dp"
+            android:fontFamily="@font/risque"
+            android:text="My Favorites"
+            android:textColor="#2523B7"
+            android:textSize="32sp"
+            app:layout_constraintBottom_toTopOf="@+id/savedMenu_frame"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.068"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.653" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/Saved_recyclerView"
+            android:layout_width="411dp"
+            android:layout_height="489dp"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/savedMenu_frame"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/savedMenu_frame"
+            app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
+            app:layout_constraintVertical_bias="1.0"
+            app:spanCount="2"
+            tools:listitem="@layout/saved_list" />
+
+        <ImageButton
+            android:id="@+id/Button_Saved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/savedbutton_big" />
+
+        <ImageButton
+            android:id="@+id/Button_home"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="@+id/savedMenu_frame"
+            app:layout_constraintEnd_toStartOf="@+id/Button_Profile"
+            app:layout_constraintHorizontal_bias="0.09"
+            app:layout_constraintStart_toEndOf="@+id/Button_Saved"
+            app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/homebutton_small" />
+
+        <ImageButton
+            android:id="@+id/Button_Profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/profile_kidsbutton" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

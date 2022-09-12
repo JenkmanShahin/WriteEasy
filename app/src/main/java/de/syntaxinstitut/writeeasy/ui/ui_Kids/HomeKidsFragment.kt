@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.adapter.AllStoriesAdapter
+import de.syntaxinstitut.writeeasy.adapter.ReadStoriesAdapter
 import de.syntaxinstitut.writeeasy.databinding.FragmentHomekidsBinding
 
 class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
@@ -45,9 +47,17 @@ class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
         viewModel.readStories.observe(
             viewLifecycleOwner,
             Observer {
-                binding.alreadyReadRecyclerView.adapter = AllStoriesAdapter(it)
+                binding.alreadyReadRecyclerView.adapter = ReadStoriesAdapter(it)
             }
         )
+
+        binding.SavedButton.setOnClickListener{
+            findNavController().navigate(HomeKidsFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
+        }
+
+        binding.ProfileButton.setOnClickListener{
+            findNavController().navigate(HomeKidsFragmentDirections.actionHomeKidsFragmentToProfileKidsFragment())
+        }
 
     }
 

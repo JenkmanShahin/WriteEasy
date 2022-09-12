@@ -1,121 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/profile_background" />
+    <data>
 
-    <ImageView
-        android:id="@+id/profile_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:srcCompat="@drawable/profilepic" />
+    </data>
 
-    <ImageView
-        android:id="@+id/addPic_baG"
-        android:layout_width="21dp"
-        android:layout_height="23dp"
-        app:layout_constraintEnd_toEndOf="@+id/profile_image"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="@+id/profile_image"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
-        app:srcCompat="@drawable/addprofilepic" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/addpic_icon"
-        android:layout_width="19dp"
-        android:layout_height="21dp"
-        app:layout_constraintBottom_toBottomOf="@+id/addPic_baG"
-        app:layout_constraintEnd_toEndOf="@+id/addPic_baG"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/addPic_baG"
-        app:layout_constraintTop_toTopOf="@+id/addPic_baG"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_baseline_add_24" />
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/profile_background" />
 
-    <TextView
-        android:id="@+id/Name_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/risque"
-        android:text="Joudi"
-        android:textColor="#2523B7"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="@+id/profile_image"
-        app:layout_constraintStart_toStartOf="@+id/profile_image"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:srcCompat="@drawable/profilepic" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="191dp"
-        android:layout_height="43dp"
-        android:layout_marginTop="4dp"
-        android:fontFamily="@font/risque"
-        android:text="iam nonumy eirmod tempor invidunt ut labore et dolore "
-        android:textAlignment="center"
-        android:textColor="#020202"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="@+id/Name_text"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/Name_text"
-        app:layout_constraintTop_toBottomOf="@+id/Name_text" />
+        <ImageView
+            android:id="@+id/addPic_baG"
+            android:layout_width="21dp"
+            android:layout_height="23dp"
+            app:layout_constraintEnd_toEndOf="@+id/profile_image"
+            app:layout_constraintHorizontal_bias="0.888"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            app:srcCompat="@drawable/addprofilepic" />
 
-    <TextView
-        android:id="@+id/myStory_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/risque"
-        android:text="My Stories"
-        android:textColor="#2523B7"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.053"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        <ImageView
+            android:id="@+id/addpic_icon"
+            android:layout_width="19dp"
+            android:layout_height="21dp"
+            app:layout_constraintBottom_toBottomOf="@+id/addPic_baG"
+            app:layout_constraintEnd_toEndOf="@+id/addPic_baG"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/addPic_baG"
+            app:layout_constraintTop_toTopOf="@+id/addPic_baG"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/ic_baseline_add_24" />
 
-    <ImageView
-        android:id="@+id/savedMenu_frame"
-        android:layout_width="406dp"
-        android:layout_height="409dp"
-        android:adjustViewBounds="true"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.47"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/kidsstory_menu" />
+        <TextView
+            android:id="@+id/Name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/risque"
+            android:text="Joudi"
+            android:textColor="#2523B7"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@+id/profile_image"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/MyStories_recyclerView"
-        android:layout_width="278dp"
-        android:layout_height="318dp"
-        android:layout_marginEnd="64dp"
-        android:layout_marginBottom="40dp"
-        android:foregroundGravity="center_vertical"
-        android:orientation="vertical"
-        app:spanCount="2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
-        tools:listitem="@layout/mystories_list">
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="191dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/risque"
+            android:text="iam nonumy eirmod tempor invidunt ut labore et dolore "
+            android:textAlignment="center"
+            android:textColor="#020202"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/Name_text"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="@+id/Name_text"
+            app:layout_constraintTop_toBottomOf="@+id/Name_text" />
 
-    </androidx.recyclerview.widget.RecyclerView>
+        <TextView
+            android:id="@+id/myStory_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:fontFamily="@font/risque"
+            android:text="My Stories"
+            android:textColor="#2523B7"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.053"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/savedMenu_frame"
+            android:layout_width="406dp"
+            android:layout_height="409dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.47"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/kidsstory_menu" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/MyStories_recyclerView"
+            android:layout_width="278dp"
+            android:layout_height="318dp"
+            android:layout_marginBottom="40dp"
+            android:foregroundGravity="center_vertical"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
+            app:spanCount="2"
+            tools:listitem="@layout/mystories_list">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

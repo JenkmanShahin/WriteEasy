@@ -8,6 +8,8 @@ import androidx.lifecycle.MutableLiveData
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import de.syntaxinstitut.writeeasy.data.DataSource
+import de.syntaxinstitut.writeeasy.data.ReadDataSource
+import de.syntaxinstitut.writeeasy.data.model.ReadStories
 import de.syntaxinstitut.writeeasy.data.model.Story
 
 const val TAG = "MAINVIEWMODEL"
@@ -16,9 +18,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val dataSource = DataSource()
+    private val readDataSource = ReadDataSource()
 
-    private val _readStories = MutableLiveData<List<Story>>()
-    val readStories: LiveData<List<Story>>
+    private val _readStories = MutableLiveData<List<ReadStories>>()
+    val readStories: LiveData<List<ReadStories>>
     get() = _readStories
 
     private val _stories = MutableLiveData<List<Story>>()
@@ -29,9 +32,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _stories.value = dataSource.loadStories()
     }
 
-    init {
-        _readStories.value = dataSource.allReadyread()
-    }
+   init {
+       _readStories.value = readDataSource.loadReadStories()
+   }
 
 
 
