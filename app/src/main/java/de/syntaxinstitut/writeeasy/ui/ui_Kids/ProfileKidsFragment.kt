@@ -33,5 +33,6 @@ class ProfileKidsFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+
     }
 }
