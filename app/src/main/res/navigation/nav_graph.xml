@@ -39,7 +39,14 @@
     <fragment
         android:id="@+id/profile_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.ProfileKidsFragment"
-        android:label="Profile_KidsFragment" />
+        android:label="Profile_KidsFragment" >
+        <action
+            android:id="@+id/action_profile_KidsFragment_to_saved_KidsFragment"
+            app:destination="@id/saved_KidsFragment" />
+        <action
+            android:id="@+id/action_profile_KidsFragment_to_homeKidsFragment"
+            app:destination="@id/homeKidsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/record_kidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.RecordkidsFragment"

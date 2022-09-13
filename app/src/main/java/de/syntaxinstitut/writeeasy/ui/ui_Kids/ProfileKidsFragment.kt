@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import de.syntaxinstitut.writeeasy.MainViewModel
+import de.syntaxinstitut.writeeasy.adapter.MyStoriesAdapter
 import de.syntaxinstitut.writeeasy.databinding.FragmentProfilrkidsBinding
 
 class ProfileKidsFragment: Fragment() {
@@ -32,7 +34,12 @@ class ProfileKidsFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        viewModel.myStories.observe(
+            viewLifecycleOwner,
+            Observer {
+                binding.MyStoriesRecyclerView.adapter = MyStoriesAdapter(it)
+            }
+        )
 
     }
 }

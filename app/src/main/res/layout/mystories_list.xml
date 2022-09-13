@@ -8,43 +8,48 @@
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="166dp"
-        android:layout_height="128dp">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="15dp">
 
-        <ImageView
-            android:id="@+id/image_Frame"
-            android:layout_width="174dp"
-            android:layout_height="134dp"
+        <androidx.cardview.widget.CardView
+            android:id="@+id/MyStories_CardView"
+            android:layout_width="175dp"
+            android:layout_height="135dp"
+            app:cardBackgroundColor="#81FFFFFF"
+            app:cardCornerRadius="30dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/profilepicframe_k" />
+            app:layout_constraintVertical_bias="0.026">
 
-        <ImageView
-            android:id="@+id/Story_image"
-            android:layout_width="168dp"
-            android:layout_height="91dp"
-            app:layout_constraintBottom_toBottomOf="@+id/image_Frame"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/image_Frame"
-            app:layout_constraintVertical_bias="0.186"
-            app:srcCompat="@drawable/storypic_k" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/Title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/risque"
-            android:text="Title"
-            android:textColor="#2523B7"
-            android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/Story_image"
-            app:layout_constraintHorizontal_bias="0.496"
-            app:layout_constraintStart_toStartOf="@+id/Story_image"
-            app:layout_constraintTop_toBottomOf="@+id/Story_image"
-            app:layout_constraintVertical_bias="0.0" />
+                <TextView
+                    android:id="@+id/title_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/risque"
+                    android:text="Title"
+                    android:textColor="#0A0EE6"
+                    android:textSize="20sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_story" />
+
+                <ImageView
+                    android:id="@+id/image_story"
+                    android:layout_width="182dp"
+                    android:layout_height="105dp"
+                    app:srcCompat="@drawable/car" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
