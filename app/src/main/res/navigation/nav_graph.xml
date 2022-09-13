@@ -46,6 +46,15 @@
         <action
             android:id="@+id/action_profile_KidsFragment_to_homeKidsFragment"
             app:destination="@id/homeKidsFragment" />
+        <action
+            android:id="@+id/action_profile_KidsFragment_to_saved_KidsFragment2"
+            app:destination="@id/saved_KidsFragment" />
+        <action
+            android:id="@+id/action_profile_KidsFragment_to_storyShow_KidsFragment"
+            app:destination="@id/storyShow_KidsFragment" />
+        <action
+            android:id="@+id/action_profile_KidsFragment_to_writingNew_KidsFragment"
+            app:destination="@id/writingNew_KidsFragment" />
     </fragment>
     <fragment
         android:id="@+id/record_kidsFragment"

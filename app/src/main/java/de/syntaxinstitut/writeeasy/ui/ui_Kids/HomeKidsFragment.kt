@@ -51,7 +51,7 @@ class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
             }
         )
 
-        binding.SavedButton.setOnClickListener{
+        binding.savedButtonP.setOnClickListener{
             findNavController().navigate(HomeKidsFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
         }
 

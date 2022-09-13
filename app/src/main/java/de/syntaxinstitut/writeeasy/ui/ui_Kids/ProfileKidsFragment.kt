@@ -7,11 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
+import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.adapter.MyStoriesAdapter
 import de.syntaxinstitut.writeeasy.databinding.FragmentProfilrkidsBinding
 
-class ProfileKidsFragment: Fragment() {
+class ProfileKidsFragment: Fragment(R.layout.fragment_profilrkids) {
 
     private lateinit var  binding: FragmentProfilrkidsBinding
 
@@ -40,6 +42,12 @@ class ProfileKidsFragment: Fragment() {
                 binding.MyStoriesRecyclerView.adapter = MyStoriesAdapter(it)
             }
         )
+        binding.savedButtonP.setOnClickListener{
+            findNavController().navigate(HomeKidsFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
+        }
 
+        binding.homeButtonP.setOnClickListener{
+            findNavController().navigate(ProfileKidsFragmentDirections.actionProfileKidsFragmentToHomeKidsFragment())
+        }
     }
 }

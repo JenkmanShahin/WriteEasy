@@ -46,7 +46,7 @@
             android:id="@+id/alreadyRead_recyclerView"
             android:layout_width="413dp"
             android:layout_height="145dp"
-            android:layout_marginBottom="12dp"
+            android:layout_marginBottom="16dp"
             android:foregroundGravity="center_horizontal"
             android:orientation="horizontal"
             android:scrollbars="horizontal"
@@ -61,7 +61,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="16dp"
             android:fontFamily="@font/risque"
             android:text="All Stories"
             android:textColor="#2523B7"
@@ -73,28 +73,24 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="410dp"
-            android:layout_height="421dp"
-            android:scaleType="fitXY"
+            android:layout_width="450dp"
+            android:layout_height="409dp"
             app:layout_constraintBottom_toBottomOf="@+id/HomeKids_Background_image"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/allStories_recyclerView"
+            app:layout_constraintStart_toStartOf="@+id/allStories_recyclerView"
             app:srcCompat="@drawable/kidsstory_menu" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/allStories_recyclerView"
-            android:layout_width="408dp"
-            android:layout_height="420dp"
-            android:layout_marginBottom="1dp"
+            android:layout_width="450dp"
+            android:layout_height="412dp"
             android:foregroundGravity="center_vertical"
             android:orientation="vertical"
             android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/imageView"
-            app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintBottom_toBottomOf="@+id/HomeKids_Background_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
             tools:listitem="@layout/allstories_list" />
 
         <ImageView
@@ -109,39 +105,31 @@
             app:srcCompat="@drawable/ic_baseline_segment_24" />
 
         <ImageButton
-            android:id="@+id/Saved_Button"
+            android:id="@+id/saved_ButtonP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.994"
             app:srcCompat="@drawable/saved_bottun" />
 
         <ImageButton
-            android:id="@+id/Home_Button"
+            android:id="@+id/home_ButtonP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/HomeKids_Background_image"
             app:layout_constraintEnd_toStartOf="@+id/Profile_Button"
-            app:layout_constraintHorizontal_bias="0.818"
-            app:layout_constraintStart_toEndOf="@+id/Saved_Button"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintVertical_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/saved_ButtonP"
             app:srcCompat="@drawable/home_kidsbutton" />
 
         <ImageButton
             android:id="@+id/Profile_Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="344dp"
             android:backgroundTint="#00FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView"
-            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/profile_kidsbutton" />
 
         <com.google.android.material.textfield.TextInputLayout

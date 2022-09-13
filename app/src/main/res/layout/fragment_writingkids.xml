@@ -15,6 +15,7 @@
             android:id="@+id/Background_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:alpha="0.2"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,72 +36,15 @@
             app:layout_constraintTop_toTopOf="@+id/Background_image"
             app:srcCompat="@drawable/newstory_frame_k" />
 
-        <Button
-            android:id="@+id/Write_button"
-            android:layout_width="50dp"
-            android:layout_height="45dp"
-            android:layout_marginStart="24dp"
-            android:backgroundTint="@color/green"
-            app:icon="@drawable/ic_baseline_border_color_24"
-            app:layout_constraintStart_toStartOf="@+id/Story_frame"
-            tools:layout_editor_absoluteY="15dp" />
-
-        <Button
-            android:id="@+id/Record_button"
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="5dp"
-            android:backgroundTint="@color/orange"
-            app:icon="@drawable/ic_baseline_mic_none_24"
-            app:layout_constraintBottom_toBottomOf="@+id/Write_button"
-            app:layout_constraintStart_toEndOf="@+id/Write_button"
-            app:layout_constraintTop_toTopOf="@+id/Write_button" />
-
-        <Button
-            android:id="@+id/Save_button"
-            android:layout_width="50dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="5dp"
-            android:backgroundTint="@color/orange"
-            app:icon="@drawable/ic_baseline_bookmark_border_24"
-            app:layout_constraintBottom_toBottomOf="@+id/Play_button"
-            app:layout_constraintStart_toEndOf="@+id/Play_button"
-            app:layout_constraintTop_toTopOf="@+id/Play_button" />
-
-        <Button
-            android:id="@+id/Play_button"
-            android:layout_width="50dp"
-            android:layout_height="42dp"
-            android:layout_marginStart="5dp"
-            android:backgroundTint="@color/green"
-            app:icon="@drawable/ic_baseline_play_circle_outline_24"
-            app:layout_constraintBottom_toBottomOf="@+id/Record_button"
-            app:layout_constraintStart_toEndOf="@+id/Record_button"
-            app:layout_constraintTop_toTopOf="@+id/Record_button" />
-
-        <Button
-            android:id="@+id/Cancle_button"
-            android:layout_width="50dp"
-            android:layout_height="46dp"
-            android:layout_marginStart="5dp"
-            android:backgroundTint="@color/green"
-            app:icon="@drawable/ic_baseline_close_24"
-            app:layout_constraintBottom_toBottomOf="@+id/Save_button"
-            app:layout_constraintEnd_toEndOf="@+id/Story_frame"
-            app:layout_constraintHorizontal_bias="0.135"
-            app:layout_constraintStart_toEndOf="@+id/Save_button"
-            app:layout_constraintTop_toTopOf="@+id/Save_button" />
-
         <ImageView
             android:id="@+id/Cover_frame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="@+id/Story_frame"
             app:layout_constraintHorizontal_bias="0.4"
             app:layout_constraintStart_toStartOf="@+id/Story_frame"
-            app:layout_constraintTop_toBottomOf="@+id/Play_button"
-            app:srcCompat="@drawable/addstorypic_k" />
+            app:srcCompat="@drawable/addstorypic_k"
+            tools:layout_editor_absoluteY="70dp" />
 
         <ImageView
             android:id="@+id/Space_line"
@@ -112,18 +56,6 @@
             app:layout_constraintStart_toStartOf="@+id/Story_frame"
             app:layout_constraintTop_toBottomOf="@+id/Cover_frame"
             app:srcCompat="@drawable/space_line" />
-
-        <Button
-            android:id="@+id/AddPic_button"
-            android:layout_width="53dp"
-            android:layout_height="44dp"
-            android:backgroundTint="#CBCAF5"
-            android:shadowColor="#504C4C"
-            app:icon="@drawable/ic_baseline_add_circle_outline_24"
-            app:layout_constraintBottom_toBottomOf="@+id/Cover_frame"
-            app:layout_constraintEnd_toEndOf="@+id/Cover_frame"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/Cover_frame" />
 
         <ImageView
             android:id="@+id/Title_frame"
@@ -149,6 +81,60 @@
             app:layout_constraintStart_toStartOf="@+id/Title_frame"
             app:layout_constraintTop_toTopOf="@+id/Title_frame"
             app:layout_constraintVertical_bias="0.392" />
+
+        <ImageButton
+            android:id="@+id/imageButton2"
+            android:layout_width="47dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/writting_butt" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="48dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton3"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/record_butt" />
+
+        <ImageButton
+            android:id="@+id/imageButton3"
+            android:layout_width="48dp"
+            android:layout_height="47dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/imageButton4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/play_butt" />
+
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="59dp"
+            android:layout_height="53dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/save_butt"
+            tools:layout_editor_absoluteX="228dp" />
+
+        <ImageButton
+            android:id="@+id/imageButton5"
+            android:layout_width="51dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#00FFFFFF"
+            app:layout_constraintStart_toEndOf="@+id/imageButton4"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/cancel_butt" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
