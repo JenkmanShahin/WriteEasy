@@ -22,6 +22,7 @@ class StoryShowKidsFragment: Fragment(R.layout.fragment_storyshowkids) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        binding = FragmentStoryshowkidsBinding.inflate(inflater, container, false)
 
         return binding.root
     }

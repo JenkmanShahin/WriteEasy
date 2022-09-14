@@ -51,5 +51,6 @@ class SavedKidsFragment: Fragment(R.layout.saved_list) {
         binding.ButtonProfile.setOnClickListener{
             findNavController().navigate(SavedKidsFragmentDirections.actionSavedKidsFragmentToProfileKidsFragment())
         }
+
     }
 }
