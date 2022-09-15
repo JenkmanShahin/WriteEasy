@@ -72,6 +72,9 @@
         <action
             android:id="@+id/action_profile_KidsFragment_to_writingNew_KidsFragment"
             app:destination="@id/writingNew_KidsFragment" />
+        <action
+            android:id="@+id/action_profile_KidsFragment_to_writingNew_KidsFragment2"
+            app:destination="@id/writingNew_KidsFragment" />
     </fragment>
     <fragment
         android:id="@+id/record_kidsFragment"

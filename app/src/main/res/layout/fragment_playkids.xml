@@ -231,7 +231,7 @@
             app:layout_constraintTop_toBottomOf="@+id/Story_frame" />
 
         <Button
-            android:id="@+id/recordS_button"
+            android:id="@+id/playS_button"
             android:layout_width="50dp"
             android:layout_height="50dp"
             app:icon="@drawable/ic_baseline_play_arrow_24"
