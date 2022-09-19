@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.databinding.FragmentRegisterkidsBinding
@@ -33,7 +34,14 @@ class RegisterKidsFragment: Fragment(R.layout.fragment_registerkids) {
         binding.RegisterButton.setOnClickListener{
             val email = binding.EmailText.text.toString()
             val password = binding.PasswordText.text.toString()
-            viewModel.register(email, password)
+
+            if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
+                viewModel.register(email, password)
+            }
+        }
+
+        binding.RegisterButton.setOnClickListener{
+            findNavController().navigate(RegisterKidsFragmentDirections.actionRegisterKidsFragmentToHomeKidsFragment())
         }
 
     }

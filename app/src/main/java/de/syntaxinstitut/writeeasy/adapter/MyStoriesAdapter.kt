@@ -1,6 +1,5 @@
 package de.syntaxinstitut.writeeasy.adapter
 
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -25,8 +24,8 @@ class MyStoriesAdapter(
 
         val item = dataset[position]
 
-        Log.i("MyStoriesAdapter", item.Title)
-        holder.binding.imageStory.setImageResource(item.Image)
+        holder.binding.TitleText.text = item.Title
+        holder.binding.StoryImage.setImageResource(item.Image)
 
     }
 

@@ -35,6 +35,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val myStories: LiveData<List<MyStories>>
     get() = _myStories
 
+    private val _story = MutableLiveData<List<ReadStories>>()
+    val story: LiveData<List<ReadStories>>
+    get() = _story
+
+    val inputText = MutableLiveData<String>()
+
     init {
         _stories.value = dataSource.loadStories()
     }
@@ -45,6 +51,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         _myStories.value = myStoriesDatasource.loadMyStories()
+    }
+
+    init {
+        _story.value = readDataSource.loadReadStories()
     }
 
 

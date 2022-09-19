@@ -65,13 +65,13 @@
 
         <ImageView
             android:id="@+id/savedMenu_frame"
-            android:layout_width="413dp"
+            android:layout_width="370dp"
             android:layout_height="434dp"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.47"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView3"
             app:layout_constraintVertical_bias="1.0"
@@ -79,7 +79,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/MyStories_recyclerView"
-            android:layout_width="409dp"
+            android:layout_width="360dp"
             android:layout_height="435dp"
             android:layout_marginBottom="40dp"
             android:foregroundGravity="center_vertical"
@@ -87,6 +87,7 @@
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.23"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/savedMenu_frame"
             app:layout_constraintVertical_bias="0.0"

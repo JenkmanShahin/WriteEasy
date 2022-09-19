@@ -117,9 +117,9 @@
     </fragment>
     <fragment
         android:id="@+id/storyShow_KidsFragment"
-        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.StoryShowKidsFragment"
+        android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.StoryDetailsFragment"
         android:label="StoryShow_KidsFragment"
-        >
+        tools:layout="@layout/fragment_storydetails">
         <action
             android:id="@+id/action_storyShow_KidsFragment_to_saved_KidsFragment"
             app:destination="@id/saved_KidsFragment" />
@@ -142,7 +142,8 @@
     <fragment
         android:id="@+id/writingNew_KidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.WritingNewKidsFragment"
-        android:label="WritingNew_KidsFragment" >
+        android:label="WritingNew_KidsFragment"
+        tools:layout="@layout/fragment_writingkids">
         <action
             android:id="@+id/action_writingNew_KidsFragment_to_record_kidsFragment"
             app:destination="@id/record_kidsFragment" />
@@ -159,7 +160,8 @@
     <fragment
         android:id="@+id/homeKidsFragment"
         android:name="de.syntaxinstitut.writeeasy.ui.ui_Kids.HomeKidsFragment"
-        android:label="HomeKidsFragment" >
+        android:label="HomeKidsFragment"
+        tools:layout="@layout/fragment_homekids">
         <action
             android:id="@+id/action_homeKidsFragment_to_saved_KidsFragment"
             app:destination="@id/saved_KidsFragment" />

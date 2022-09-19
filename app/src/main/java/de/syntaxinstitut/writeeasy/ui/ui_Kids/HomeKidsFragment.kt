@@ -20,6 +20,7 @@ class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
 
     private val viewModel: MainViewModel by activityViewModels()
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
