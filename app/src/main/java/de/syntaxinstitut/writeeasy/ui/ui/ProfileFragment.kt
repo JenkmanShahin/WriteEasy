@@ -1,4 +1,4 @@
-package de.syntaxinstitut.writeeasy.ui.ui_Kids
+package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,11 +11,11 @@ import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.adapter.MyStoriesAdapter
-import de.syntaxinstitut.writeeasy.databinding.FragmentProfilrkidsBinding
+import de.syntaxinstitut.writeeasy.databinding.FragmentProfileBinding
 
-class ProfileKidsFragment: Fragment(R.layout.fragment_profilrkids) {
+class ProfileFragment: Fragment(R.layout.fragment_profile) {
 
-    private lateinit var  binding: FragmentProfilrkidsBinding
+    private lateinit var  binding: FragmentProfileBinding
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -28,7 +28,7 @@ class ProfileKidsFragment: Fragment(R.layout.fragment_profilrkids) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentProfilrkidsBinding.inflate(inflater, container, false)
+        binding = FragmentProfileBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -43,17 +43,17 @@ class ProfileKidsFragment: Fragment(R.layout.fragment_profilrkids) {
             }
         )
         binding.savedButtonP.setOnClickListener{
-            findNavController().navigate(HomeKidsFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
+            findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
         }
 
         binding.homeButtonP.setOnClickListener{
-            findNavController().navigate(ProfileKidsFragmentDirections.actionProfileKidsFragmentToHomeKidsFragment())
+            findNavController().navigate(ProfileFragmentDirections.actionProfileKidsFragmentToHomeKidsFragment())
         }
         binding.WriteButton.setOnClickListener{
-            findNavController().navigate(ProfileKidsFragmentDirections.actionProfileKidsFragmentToWritingNewKidsFragment())
+            findNavController().navigate(ProfileFragmentDirections.actionProfileKidsFragmentToWritingNewKidsFragment())
         }
         binding.SaveButton.setOnClickListener{
-            findNavController().navigate(ProfileKidsFragmentDirections.actionProfileKidsFragmentToSavedKidsFragment())
+            findNavController().navigate(ProfileFragmentDirections.actionProfileKidsFragmentToSavedKidsFragment())
         }
     }
 }

@@ -41,22 +41,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val inputText = MutableLiveData<String>()
 
+
     init {
         _stories.value = dataSource.loadStories()
-    }
 
-   init {
-       _readStories.value = readDataSource.loadReadStories()
-   }
-
-    init {
         _myStories.value = myStoriesDatasource.loadMyStories()
+
+        _readStories.value = readDataSource.loadReadStories()
     }
 
     init {
         _story.value = readDataSource.loadReadStories()
     }
-
 
 
     private val _currentUser = MutableLiveData<FirebaseUser>(firebaseAuth.currentUser)
@@ -72,7 +68,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Log In failed: ${it.exception}")
             }
         }
-
     }
 
     fun register( email: String, password: String) {
@@ -83,5 +78,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                 Log.e(TAG, "Registering failed: ${it.exception}")
             }
         }
+    }
+
+    fun logout() {
+        firebaseAuth.signOut()
+        _currentUser.value = firebaseAuth.currentUser
     }
 }

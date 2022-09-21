@@ -40,11 +40,23 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputEditText" />
 
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="401dp"
+            android:layout_height="136dp"
+            android:backgroundTint="#ECF8C9"
+            app:layout_constraintBottom_toBottomOf="@+id/alreadyRead_recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/alreadyRead_recyclerView"
+            app:layout_constraintTop_toTopOf="@+id/alreadyRead_recyclerView"
+            app:layout_constraintVertical_bias="1.0"
+            app:srcCompat="@drawable/redframe" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/alreadyRead_recyclerView"
             android:layout_width="413dp"
             android:layout_height="145dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="4dp"
             android:foregroundGravity="center_horizontal"
             android:orientation="horizontal"
             android:scrollbars="horizontal"
@@ -91,16 +103,21 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="@+id/HomeKids_Background_image"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.49"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/imageView"
+            app:layout_constraintVertical_bias="1.0"
             tools:listitem="@layout/allstories_list" />
 
         <ImageView
             android:id="@+id/Menu_icon"
             android:layout_width="44dp"
             android:layout_height="48dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="39dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/textInputEditText"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_baseline_segment_24" />
@@ -145,8 +162,8 @@
             android:id="@+id/textInputEditText"
             android:layout_width="318dp"
             android:layout_height="48dp"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="32dp"
             android:hint="Search"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -1,21 +1,23 @@
-package de.syntaxinstitut.writeeasy.ui.ui_Kids
+package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
-import de.syntaxinstitut.writeeasy.databinding.FragmentLoginkidsBinding
+import de.syntaxinstitut.writeeasy.databinding.FragmentStartBinding
 
-class LogInKidsFragment: Fragment(R.layout.fragment_loginkids) {
 
-    private lateinit var binding: FragmentLoginkidsBinding
+class StartFragment: Fragment() {
+
+
+    private lateinit var binding: FragmentStartBinding
+
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -24,7 +26,7 @@ class LogInKidsFragment: Fragment(R.layout.fragment_loginkids) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_loginkids, container, false)
+        binding = de.syntaxinstitut.writeeasy.databinding.FragmentStartBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -32,10 +34,9 @@ class LogInKidsFragment: Fragment(R.layout.fragment_loginkids) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
-        binding.LogInButtonkids.setOnClickListener{
-            val email = binding.LogInemailText.text.toString()
-            val password = binding.LogInpasswordText.text.toString()
+        binding.LogInButton.setOnClickListener{
+            val email = binding.EmailText.text.toString()
+            val password = binding.PassText.text.toString()
 
             if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
                 viewModel.login(email, password)
@@ -51,8 +52,24 @@ class LogInKidsFragment: Fragment(R.layout.fragment_loginkids) {
             }
         )
 
-        binding.LogInButtonkids.setOnClickListener{
-            findNavController().navigate(LogInKidsFragmentDirections.actionLogInKidsFragmentToHomeKidsFragment())
+
+            binding.registerButton.setOnClickListener{
+                val email = binding.EmailText.text.toString()
+                val password = binding.PassText.text.toString()
+
+                if (!email.isNullOrEmpty() && !password.isNullOrEmpty()){
+                    viewModel.register(email, password)
+                }
+            }
+
+
+
+        binding.registerButton.setOnClickListener{
+            findNavController().navigate(StartFragmentDirections.actionStartFragmentToHomeKidsFragment())
+        }
+
+        binding.LogInButton.setOnClickListener{
+            findNavController().navigate(StartFragmentDirections.actionStartFragmentToHomeKidsFragment())
         }
     }
 }

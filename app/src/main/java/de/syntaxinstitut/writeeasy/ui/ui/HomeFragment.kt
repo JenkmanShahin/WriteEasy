@@ -1,4 +1,4 @@
-package de.syntaxinstitut.writeeasy.ui.ui_Kids
+package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,11 +12,12 @@ import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.adapter.AllStoriesAdapter
 import de.syntaxinstitut.writeeasy.adapter.ReadStoriesAdapter
-import de.syntaxinstitut.writeeasy.databinding.FragmentHomekidsBinding
+import de.syntaxinstitut.writeeasy.databinding.FragmentHomeBinding
 
-class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
 
-    private lateinit var binding: FragmentHomekidsBinding
+class HomeFragment: Fragment(R.layout.fragment_home) {
+
+    private lateinit var binding: FragmentHomeBinding
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -30,7 +31,7 @@ class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentHomekidsBinding.inflate(inflater, container, false)
+        binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         return binding.root
     }
@@ -53,11 +54,11 @@ class HomeKidsFragment: Fragment(R.layout.fragment_homekids) {
         )
 
         binding.savedButtonP.setOnClickListener{
-            findNavController().navigate(HomeKidsFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
+            findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
         }
 
         binding.ProfileButton.setOnClickListener{
-            findNavController().navigate(HomeKidsFragmentDirections.actionHomeKidsFragmentToProfileKidsFragment())
+            findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToProfileKidsFragment())
         }
 
     }

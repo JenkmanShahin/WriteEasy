@@ -1,4 +1,4 @@
-package de.syntaxinstitut.writeeasy.ui.ui_Kids
+package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater

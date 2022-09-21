@@ -9,7 +9,8 @@ import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.writeeasy.data.model.ReadStories
 import de.syntaxinstitut.writeeasy.databinding.FragmentStorydetailsBinding
-import de.syntaxinstitut.writeeasy.ui.ui_Kids.ProfileKidsFragmentDirections
+import de.syntaxinstitut.writeeasy.ui.ui.ProfileFragmentDirections
+
 
 class NewStoryAdapter(
     private val context: Context
@@ -44,7 +45,7 @@ class NewStoryAdapter(
 
         holder.binding.StoryFrame.setOnClickListener{
             holder.itemView.findNavController()
-                .navigate(ProfileKidsFragmentDirections.actionProfileKidsFragmentToStoryShowKidsFragment(item.toString()))
+                .navigate(ProfileFragmentDirections.actionProfileKidsFragmentToStoryShowKidsFragment(item.toString()))
         }
     }
 

@@ -1,4 +1,4 @@
-package de.syntaxinstitut.writeeasy.ui.ui_Kids
+package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +9,11 @@ import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.data.model.NewStory
-import de.syntaxinstitut.writeeasy.databinding.FragmentWritingkidsBinding
+import de.syntaxinstitut.writeeasy.databinding.FragmentWritingBinding
 
-class WritingNewKidsFragment: Fragment(R.layout.fragment_writingkids) {
+class WritingNewFragment: Fragment(R.layout.fragment_writing) {
 
-    private lateinit var binding: FragmentWritingkidsBinding
+    private lateinit var binding: FragmentWritingBinding
 
     private val viewModel: MainViewModel by activityViewModels()
 
@@ -29,7 +29,7 @@ class WritingNewKidsFragment: Fragment(R.layout.fragment_writingkids) {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentWritingkidsBinding.inflate(inflater, container, false)
+        binding = FragmentWritingBinding.inflate(inflater, container, false)
 
         return binding.root
     }
