@@ -194,7 +194,6 @@
             android:layout_marginTop="16dp"
             android:hint="Type Something"
             android:inputType="textCapSentences|textMultiLine"
-            android:text="@={viewModel.inputText}"
             android:gravity="top"
             android:textAlignment="viewStart"
             app:layout_constraintStart_toStartOf="@+id/Story_frame"

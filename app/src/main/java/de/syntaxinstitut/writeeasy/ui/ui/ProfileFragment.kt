@@ -6,11 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
-import de.syntaxinstitut.writeeasy.adapter.MyStoriesAdapter
 import de.syntaxinstitut.writeeasy.databinding.FragmentProfileBinding
 
 class ProfileFragment: Fragment(R.layout.fragment_profile) {
@@ -36,12 +34,13 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.myStories.observe(
-            viewLifecycleOwner,
-            Observer {
-                binding.MyStoriesRecyclerView.adapter = MyStoriesAdapter(it)
-            }
-        )
+//        viewModel.myStories.observe(
+//            viewLifecycleOwner,
+//            Observer {
+//                binding.MyStoriesRecyclerView.adapter = MyStoriesAdapter(it)
+//            }
+//        )
+
         binding.savedButtonP.setOnClickListener{
             findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
         }

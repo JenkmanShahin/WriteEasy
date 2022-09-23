@@ -1,9 +1,18 @@
 package de.syntaxinstitut.writeeasy.data.model
 
+import com.squareup.moshi.Json
+
 data class Story(
-    val id: Long,
-    val personName: String,
+    @Json(name = "Ids")
+    val ids: String,
+    @Json(name = "Title")
     val title: String,
-    val image: Int,
-    val description: String
+    @Json(name = "Stories")
+    val stories: String,
+    @Json(name = "Describtion")
+    val description: String,
+    @Json(name = "PersonName")
+    val personName: String,
+    @Json(name = "Photos")
+    val photos: String
 )

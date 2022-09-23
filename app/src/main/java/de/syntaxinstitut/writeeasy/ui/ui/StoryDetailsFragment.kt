@@ -4,9 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import coil.load
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.databinding.FragmentStorydetailsBinding
@@ -17,13 +19,13 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
 
     private val viewModel: MainViewModel by activityViewModels()
 
-    private var storyId: Long = 0
+    private var storyId: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
-            storyId = it.getLong("storyId")
+            storyId = it.getString("storyid").toString()
         }
     }
 
@@ -39,15 +41,16 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val story = viewModel.story.value?.find { it.id == storyId }
+        val story = viewModel.stories.value?.find { it.ids == storyId }
 
-        if (story != null) {
-            binding.CoverFrame.setImageResource(story.image)
-            binding.storyText.text = getString(R.string.placeholder)
-        }
+        val imgUri = story!!.photos.toUri().buildUpon().scheme("https").build()
 
-        binding.StoryFrame.setOnClickListener{
+        binding.CoverFrame.load(imgUri)
+
+     binding.StoryFrame.setOnClickListener{
             findNavController().navigateUp()
-        }
+       }
+        binding.TitleText.text = story.title
+        binding.storyText.text = story.stories
     }
 }

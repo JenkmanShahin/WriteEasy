@@ -30,7 +30,7 @@ class SavedStoriesAdapter(
         val item = dataset[position]
 
         Log.i("SavedAdapter", item.title)
-        holder.binding.StoryImage.setImageResource(item.image)
+      //  holder.binding.StoryImage.setImageResource(item.photos)
         holder.binding.TitleText.text = item.title
         holder.binding.DescritionText.text = item.description
     }

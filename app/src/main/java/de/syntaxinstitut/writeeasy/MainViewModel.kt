@@ -5,14 +5,16 @@ import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import de.syntaxinstitut.writeeasy.data.DataSource
 import de.syntaxinstitut.writeeasy.data.MyStoriesDatasource
 import de.syntaxinstitut.writeeasy.data.ReadDataSource
-import de.syntaxinstitut.writeeasy.data.model.MyStories
-import de.syntaxinstitut.writeeasy.data.model.ReadStories
+import de.syntaxinstitut.writeeasy.data.Repository
 import de.syntaxinstitut.writeeasy.data.model.Story
+import de.syntaxinstitut.writeeasy.data.remote.StoryApi
+import kotlinx.coroutines.launch
 
 const val TAG = "MAINVIEWMODEL"
 
@@ -22,8 +24,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val dataSource = DataSource()
     private val readDataSource = ReadDataSource()
     private val myStoriesDatasource = MyStoriesDatasource()
+    private val repository = Repository(StoryApi)
 
-    private val _readStories = MutableLiveData<List<ReadStories>>()
+   /* private val _readStories = MutableLiveData<List<ReadStories>>()
     val readStories: LiveData<List<ReadStories>>
     get() = _readStories
 
@@ -37,21 +40,33 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val _story = MutableLiveData<List<ReadStories>>()
     val story: LiveData<List<ReadStories>>
-    get() = _story
+    get() = _story*/
 
-    val inputText = MutableLiveData<String>()
+    val stories: LiveData<List<Story>> = repository.storylist
 
+//    val inputText = MutableLiveData<String>()
+
+
+//    init {
+//        _stories.value = dataSource.loadStories()
+//
+//        _myStories.value = myStoriesDatasource.loadMyStories()
+//
+//        _readStories.value = readDataSource.loadReadStories()
+//    }
+
+ //   init {
+ //       _story.value = readDataSource.loadReadStories()
+  //  }
 
     init {
-        _stories.value = dataSource.loadStories()
-
-        _myStories.value = myStoriesDatasource.loadMyStories()
-
-        _readStories.value = readDataSource.loadReadStories()
+        loadData()
     }
 
-    init {
-        _story.value = readDataSource.loadReadStories()
+    fun loadData() {
+        viewModelScope.launch {
+            repository.getStories()
+        }
     }
 
 

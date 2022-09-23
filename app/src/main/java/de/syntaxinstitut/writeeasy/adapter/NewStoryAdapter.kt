@@ -5,11 +5,9 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import de.syntaxinstitut.writeeasy.data.model.ReadStories
 import de.syntaxinstitut.writeeasy.databinding.FragmentStorydetailsBinding
-import de.syntaxinstitut.writeeasy.ui.ui.ProfileFragmentDirections
 
 
 class NewStoryAdapter(
@@ -43,10 +41,10 @@ class NewStoryAdapter(
         holder.binding.CoverFrame.setImageResource(item.image)
         holder.binding.storyText.text = item.toString()
 
-        holder.binding.StoryFrame.setOnClickListener{
-            holder.itemView.findNavController()
-                .navigate(ProfileFragmentDirections.actionProfileKidsFragmentToStoryShowKidsFragment(item.toString()))
-        }
+//        holder.binding.StoryFrame.setOnClickListener{
+//            holder.itemView.findNavController()
+//                .navigate(ProfileFragmentDirections.(item.toString()))
+//        }
     }
 
     override fun getItemCount(): Int {

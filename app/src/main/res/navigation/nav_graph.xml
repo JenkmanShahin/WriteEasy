@@ -47,9 +47,6 @@
             android:id="@+id/action_profile_KidsFragment_to_saved_KidsFragment2"
             app:destination="@id/saved_KidsFragment" />
         <action
-            android:id="@+id/action_profile_KidsFragment_to_storyShow_KidsFragment"
-            app:destination="@id/storyShow_KidsFragment" />
-        <action
             android:id="@+id/action_profile_KidsFragment_to_writingNew_KidsFragment"
             app:destination="@id/writingNew_KidsFragment" />
         <action
@@ -107,7 +104,7 @@
             android:id="@+id/action_storyShow_KidsFragment_to_record_kidsFragment"
             app:destination="@id/record_kidsFragment" />
         <argument
-            android:name="storyText"
+            android:name="storyid"
             app:argType="string" />
     </fragment>
     <fragment
@@ -139,5 +136,8 @@
         <action
             android:id="@+id/action_homeKidsFragment_to_profile_KidsFragment"
             app:destination="@id/profile_KidsFragment" />
+        <action
+            android:id="@+id/action_homeKidsFragment_to_storyShow_KidsFragment"
+            app:destination="@id/storyShow_KidsFragment" />
     </fragment>
 </navigation>
