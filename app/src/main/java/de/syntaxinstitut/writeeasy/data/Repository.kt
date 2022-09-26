@@ -11,6 +11,12 @@ class Repository(private val storyApi: StoryApi) {
     val storylist: LiveData<List<Story>>
         get() = _storyList
 
+    private val _readStories = MutableLiveData<MutableList<Story>>()
+    val readStories: LiveData<MutableList<Story>>
+    get() = _readStories
+
+
+
     suspend fun getStories() {
         _storyList.value = storyApi.retrofitService.getStories()
     }

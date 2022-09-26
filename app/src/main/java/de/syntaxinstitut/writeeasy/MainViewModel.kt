@@ -43,6 +43,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     get() = _story*/
 
     val stories: LiveData<List<Story>> = repository.storylist
+    val readStories: LiveData<List<Story>> = MutableLiveData()
 
 //    val inputText = MutableLiveData<String>()
 

@@ -1,14 +1,24 @@
 package de.syntaxinstitut.writeeasy.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
-import de.syntaxinstitut.writeeasy.data.model.ReadStories
+import coil.load
+import de.syntaxinstitut.writeeasy.data.model.Story
 import de.syntaxinstitut.writeeasy.databinding.ReadListBinding
 
 class ReadStoriesAdapter(
-    private val dataset: List<ReadStories>
 ) : RecyclerView.Adapter<ReadStoriesAdapter.ItemViewHolder>() {
+
+    private var dataset: List<Story> = listOf()
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun submitList(list: List<Story>) {
+        dataset = list
+        notifyDataSetChanged()
+    }
 
     class ItemViewHolder(val binding: ReadListBinding) :
             RecyclerView.ViewHolder(binding.root)
@@ -24,8 +34,13 @@ class ReadStoriesAdapter(
 
         val item = dataset[position]
 
+        val imgUri = item.photos.toUri().buildUpon().scheme("https").build()
+        holder.binding.ReadImage.load(imgUri)
 
-        holder.binding.ReadImage.setImageResource(item.image)
+        holder.binding.TitleText.text = item.title
+        holder.binding.NameText.text = item.personName
+
+
     }
 
     override fun getItemCount(): Int {

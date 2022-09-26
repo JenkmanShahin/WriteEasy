@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.adapter.AllStoriesAdapter
+import de.syntaxinstitut.writeeasy.adapter.ReadStoriesAdapter
 import de.syntaxinstitut.writeeasy.databinding.FragmentHomeBinding
 
 
@@ -48,13 +49,16 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
             }
         )
 
+        val readStories = ReadStoriesAdapter()
+        binding.alreadyReadRecyclerView.adapter = readStories
 
-//        viewModel.readStories.observe(
-//            viewLifecycleOwner,
-//            Observer {
-//                binding.alreadyReadRecyclerView.adapter = ReadStoriesAdapter(it)
-//            }
-//        )
+
+        viewModel.stories.observe(
+            viewLifecycleOwner,
+            Observer {
+                binding.alreadyReadRecyclerView.adapter = ReadStoriesAdapter()
+            }
+        )
 
         binding.savedButtonP.setOnClickListener{
             findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())

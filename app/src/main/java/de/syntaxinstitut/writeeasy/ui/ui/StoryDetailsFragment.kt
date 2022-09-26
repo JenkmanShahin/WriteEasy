@@ -1,6 +1,7 @@
 package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,5 +53,6 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
        }
         binding.TitleText.text = story.title
         binding.storyText.text = story.stories
+        binding.storyText.movementMethod = ScrollingMovementMethod()
     }
 }
