@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
-import de.syntaxinstitut.writeeasy.data.model.NewStory
 import de.syntaxinstitut.writeeasy.databinding.FragmentWritingBinding
 
 class WritingNewFragment: Fragment(R.layout.fragment_writing) {

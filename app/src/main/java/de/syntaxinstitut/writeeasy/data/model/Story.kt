@@ -1,8 +1,12 @@
 package de.syntaxinstitut.writeeasy.data.model
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import com.squareup.moshi.Json
 
+@Entity
 data class Story(
+    @PrimaryKey(autoGenerate = true)
     @Json(name = "Ids")
     val ids: String,
     @Json(name = "Title")

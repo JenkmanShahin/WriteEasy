@@ -8,12 +8,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
-import de.syntaxinstitut.writeeasy.data.DataSource
-import de.syntaxinstitut.writeeasy.data.MyStoriesDatasource
-import de.syntaxinstitut.writeeasy.data.ReadDataSource
 import de.syntaxinstitut.writeeasy.data.Repository
 import de.syntaxinstitut.writeeasy.data.model.Story
 import de.syntaxinstitut.writeeasy.data.remote.StoryApi
+import de.syntaxinstitut.writeeasy.local.RepositoryDB
+import de.syntaxinstitut.writeeasy.local.getDatabase
 import kotlinx.coroutines.launch
 
 const val TAG = "MAINVIEWMODEL"
@@ -21,10 +20,9 @@ const val TAG = "MAINVIEWMODEL"
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
-    private val dataSource = DataSource()
-    private val readDataSource = ReadDataSource()
-    private val myStoriesDatasource = MyStoriesDatasource()
     private val repository = Repository(StoryApi)
+    private val database = getDatabase(application)
+    private val repositoryDB = RepositoryDB(database)
 
    /* private val _readStories = MutableLiveData<List<ReadStories>>()
     val readStories: LiveData<List<ReadStories>>
@@ -44,6 +42,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val stories: LiveData<List<Story>> = repository.storylist
     var readStories: LiveData<List<Story>> = MutableLiveData()
+    val storyList = repositoryDB.storyList
+
+    fun insertStory(story: Story) {
+        viewModelScope.launch {
+            repositoryDB.insert(story)
+        }
+    }
 
 //    val inputText = MutableLiveData<String>()
 

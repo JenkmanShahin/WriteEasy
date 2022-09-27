@@ -1,7 +1,6 @@
 package de.syntaxinstitut.writeeasy.data
 
 import de.syntaxinstitut.writeeasy.R
-import de.syntaxinstitut.writeeasy.data.model.MyStories
 
 class MyStoriesDatasource {
     fun loadMyStories(): List<MyStories> {

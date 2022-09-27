@@ -34,6 +34,11 @@ class ReadStoriesAdapter(
 
         val item = dataset[position]
 
+        if (!item.read){
+            holder.binding.ReadImage.load(null)
+            return
+        }
+
         val imgUri = item.photos.toUri().buildUpon().scheme("https").build()
         holder.binding.ReadImage.load(imgUri)
 

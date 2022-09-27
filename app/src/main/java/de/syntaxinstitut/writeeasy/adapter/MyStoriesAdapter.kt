@@ -3,7 +3,6 @@ package de.syntaxinstitut.writeeasy.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import de.syntaxinstitut.writeeasy.data.model.MyStories
 import de.syntaxinstitut.writeeasy.databinding.MystoriesListBinding
 
 class MyStoriesAdapter(
