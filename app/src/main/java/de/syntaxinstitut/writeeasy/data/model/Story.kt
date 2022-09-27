@@ -14,5 +14,6 @@ data class Story(
     @Json(name = "PersonName")
     val personName: String,
     @Json(name = "Photos")
-    val photos: String
+    val photos: String,
+    var read: Boolean = false
 )

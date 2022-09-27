@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import de.syntaxinstitut.writeeasy.MainViewModel
 import de.syntaxinstitut.writeeasy.R
 import de.syntaxinstitut.writeeasy.adapter.AllStoriesAdapter
 import de.syntaxinstitut.writeeasy.adapter.ReadStoriesAdapter
+import de.syntaxinstitut.writeeasy.data.model.Story
 import de.syntaxinstitut.writeeasy.databinding.FragmentHomeBinding
 
 
@@ -52,13 +54,24 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         val readStories = ReadStoriesAdapter()
         binding.alreadyReadRecyclerView.adapter = readStories
 
+        var filter: List<Story>? = viewModel.stories.value
+        viewModel.readStories = MutableLiveData(filter?.filter { it.read == true })
 
-        viewModel.stories.observe(
+
+        viewModel.readStories.observe(
             viewLifecycleOwner,
             Observer {
-                binding.alreadyReadRecyclerView.adapter = ReadStoriesAdapter()
+                readStories.submitList(it)
             }
         )
+
+//        viewModel.stories.observe(
+//            viewLifecycleOwner,
+//            Observer {
+//              readStories.submitList(it)
+//                binding.alreadyReadRecyclerView.adapter = ReadStoriesAdapter()
+//            }
+//        )
 
         binding.savedButtonP.setOnClickListener{
             findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())

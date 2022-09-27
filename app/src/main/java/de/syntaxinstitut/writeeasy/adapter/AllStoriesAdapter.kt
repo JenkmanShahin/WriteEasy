@@ -13,7 +13,7 @@ import de.syntaxinstitut.writeeasy.ui.ui.HomeFragmentDirections
 
 
 class AllStoriesAdapter(
-    private val addreadStories: (Story) -> Unit
+//    private val addreadStories: (Story) -> Unit
 ) : RecyclerView.Adapter<AllStoriesAdapter.ItemViewHolder>() {
 
     private var dataset: List<Story> = listOf()
@@ -51,8 +51,9 @@ class AllStoriesAdapter(
 
 
         holder.binding.cardView2.setOnClickListener{
+            item.read = true
             holder.itemView.findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToStoryShowKidsFragment(item.ids))
-            addreadStories(item)
+//            addreadStories(item)
         }
     }
 
