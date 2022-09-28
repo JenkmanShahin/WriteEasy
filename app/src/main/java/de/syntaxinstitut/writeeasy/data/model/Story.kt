@@ -6,7 +6,7 @@ import com.squareup.moshi.Json
 
 @Entity
 data class Story(
-    @PrimaryKey(autoGenerate = true)
+    @PrimaryKey
     @Json(name = "Ids")
     val ids: String,
     @Json(name = "Title")
@@ -19,5 +19,6 @@ data class Story(
     val personName: String,
     @Json(name = "Photos")
     val photos: String,
-    var read: Boolean = false
+    var read: Boolean = false,
+    var clicked: Boolean = false
 )

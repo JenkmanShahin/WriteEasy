@@ -91,6 +91,12 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
+    fun adtoFavs(story: Story) {
+        viewModelScope.launch {
+            repositoryDB.updateStory(story)
+        }
+    }
+
     fun register( email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
             if (it.isSuccessful) {

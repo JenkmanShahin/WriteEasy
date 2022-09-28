@@ -11,6 +11,9 @@ interface StoryDatabaseDao {
     suspend fun insert(story: Story)
 
     @Update
+    suspend fun updateStory(story: Story)
+
+    @Update
     suspend fun update(story: Story)
 
     @Query("SELECT * FROM Story")

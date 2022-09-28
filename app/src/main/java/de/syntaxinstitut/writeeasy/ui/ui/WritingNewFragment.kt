@@ -43,10 +43,10 @@ class WritingNewFragment: Fragment(R.layout.fragment_writing) {
 
         }*/
 
-        binding.saBtn.setOnClickListener{
-            val story = binding.storyText.text
-            val newStory = NewStory("Harry Poter", story, R.drawable.kid)
-
-        }
+//        binding.saBtn.setOnClickListener{
+//            val story = binding.storyText.text
+//            val newStory = NewStory("Harry Poter", story, R.drawable.kid)
+//
+//        }
     }
 }

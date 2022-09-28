@@ -5,8 +5,10 @@ import android.content.Context
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.net.toUri
 import androidx.recyclerview.widget.RecyclerView
-import de.syntaxinstitut.writeeasy.data.model.ReadStories
+import coil.load
+import de.syntaxinstitut.writeeasy.data.model.Story
 import de.syntaxinstitut.writeeasy.databinding.FragmentStorydetailsBinding
 
 
@@ -14,10 +16,10 @@ class NewStoryAdapter(
     private val context: Context
 ) : RecyclerView.Adapter<NewStoryAdapter.ItemViewHolder>() {
 
-    private lateinit var dataset: List<ReadStories>
+    private lateinit var dataset: List<Story>
 
     @SuppressLint("NotifyDataSetChanged")
-    fun submitList(list: List<ReadStories>) {
+    fun submitList(list: List<Story>) {
         dataset = list
         notifyDataSetChanged()
     }
@@ -35,10 +37,13 @@ class NewStoryAdapter(
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
         val item = dataset[position]
+        val imgUri = item.photos.toUri().buildUpon().scheme("https").build()
+
+
 
         Log.i("NewStoryAdapter", item.toString())
         holder.binding.TitleText.text = item.title
-        holder.binding.CoverFrame.setImageResource(item.image)
+        holder.binding.CoverFrame.load(imgUri)
         holder.binding.storyText.text = item.toString()
 
 //        holder.binding.StoryFrame.setOnClickListener{
