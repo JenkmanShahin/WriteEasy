@@ -22,7 +22,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val firebaseAuth = FirebaseAuth.getInstance()
     private val repository = Repository(StoryApi)
     private val database = getDatabase(application)
-    private val repositoryDB = RepositoryDB(database)
+    private val repositoryDB = RepositoryDB(database,StoryApi)
 
    /* private val _readStories = MutableLiveData<List<ReadStories>>()
     val readStories: LiveData<List<ReadStories>>
@@ -42,7 +42,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val stories: LiveData<List<Story>> = repository.storylist
     var readStories: LiveData<List<Story>> = MutableLiveData()
-    val storyList = repositoryDB.storyList
+    val storyList: LiveData<List<Story>> = repositoryDB.storylist
     var savedStories: LiveData<List<Story>> = MutableLiveData()
 
     fun insertStory(story: Story) {
@@ -72,7 +72,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun loadData() {
         viewModelScope.launch {
-            repository.getStories()
+            repositoryDB.getStories()
         }
     }
 
@@ -92,11 +92,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-    fun adtoFavs(story: Story) {
-        viewModelScope.launch {
-            repositoryDB.updateStory(story)
-        }
-    }
+//    fun adtoFavs(story: Story) {
+//        viewModelScope.launch {
+//            repositoryDB.updateStory(story)
+//        }
+//    }
 
     fun register( email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{

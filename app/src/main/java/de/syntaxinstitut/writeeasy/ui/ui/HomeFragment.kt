@@ -37,10 +37,10 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val storiesAdapter = AllStoriesAdapter()
+        val storiesAdapter = AllStoriesAdapter(emptyList())
         binding.allStoriesRecyclerView.adapter = storiesAdapter
 
-        viewModel.stories.observe(
+        viewModel.storyList.observe(
             viewLifecycleOwner,
             Observer {
                storiesAdapter.submitList(it)
@@ -50,7 +50,7 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         val readStories = ReadStoriesAdapter()
         binding.alreadyReadRecyclerView.adapter = readStories
 
-        var filter: List<Story>? = viewModel.stories.value
+        var filter: List<Story>? = viewModel.storyList.value
         viewModel.readStories = MutableLiveData(filter?.filter { it.read == true })
 
 

@@ -61,20 +61,6 @@
             app:layout_constraintTop_toBottomOf="@+id/Cover_frame"
             app:srcCompat="@drawable/space_line" />
 
-        <TextView
-            android:id="@+id/Title_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="28dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/risque"
-            android:text="Title"
-            android:textAlignment="viewStart"
-            android:textColor="#2523B7"
-            android:textSize="24sp"
-            app:layout_constraintStart_toStartOf="@+id/Story_frame"
-            app:layout_constraintTop_toBottomOf="@+id/Space_line" />
-
         <ImageButton
             android:id="@+id/write_Button"
             android:layout_width="47dp"
@@ -191,13 +177,13 @@
             android:layout_width="296dp"
             android:layout_height="342dp"
             android:layout_marginStart="28dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="8dp"
+            android:gravity="top"
             android:hint="Type Something"
             android:inputType="textCapSentences|textMultiLine"
-            android:gravity="top"
             android:textAlignment="viewStart"
             app:layout_constraintStart_toStartOf="@+id/Story_frame"
-            app:layout_constraintTop_toBottomOf="@+id/Title_text" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
 
         <ImageView
             android:id="@+id/imageView2"
@@ -258,6 +244,26 @@
             app:layout_constraintStart_toStartOf="@+id/save_Button"
             app:layout_constraintTop_toTopOf="@+id/save_Button"
             app:srcCompat="@drawable/ic_baseline_bookmark_border_24" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout"
+            android:layout_width="123dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="16dp"
+            android:textColorHint="#0723E6"
+            app:layout_constraintStart_toStartOf="@+id/story_text"
+            app:layout_constraintTop_toBottomOf="@+id/Space_line">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#00FFFFFF"
+                android:fontFamily="@font/risque"
+                android:hint="Title"
+                android:textColor="#1945DF"
+                tools:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

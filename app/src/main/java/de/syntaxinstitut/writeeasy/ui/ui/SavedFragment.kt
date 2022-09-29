@@ -40,8 +40,6 @@ class SavedFragment: Fragment(R.layout.saved_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val savedStoriesAdapter = SavedStoriesAdapter()
-        binding.SavedRecyclerView.adapter = savedStoriesAdapter
 
 
         val savedStories = SavedStoriesAdapter()
@@ -51,10 +49,10 @@ class SavedFragment: Fragment(R.layout.saved_list) {
         viewModel.savedStories = MutableLiveData(filter?.filter { it.saved == true })
         Log.d("Saved:", viewModel.savedStories.value?.size.toString())
 
-        viewModel.stories.observe(
+        viewModel.readStories.observe(
             viewLifecycleOwner,
             Observer {
-                savedStoriesAdapter.submitList(it)
+                savedStories.submitList(it)
             }
         )
         binding.ButtonHome.setOnClickListener{

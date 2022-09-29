@@ -2,7 +2,6 @@ package de.syntaxinstitut.writeeasy.adapter
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
@@ -36,12 +35,12 @@ class NewStoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
+
+
+
         val item = dataset[position]
         val imgUri = item.photos.toUri().buildUpon().scheme("https").build()
 
-
-
-        Log.i("NewStoryAdapter", item.toString())
         holder.binding.TitleText.text = item.title
         holder.binding.CoverFrame.load(imgUri)
         holder.binding.storyText.text = item.toString()

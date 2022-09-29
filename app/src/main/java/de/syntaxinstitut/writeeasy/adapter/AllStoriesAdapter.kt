@@ -13,10 +13,10 @@ import de.syntaxinstitut.writeeasy.ui.ui.HomeFragmentDirections
 
 
 class AllStoriesAdapter(
+    private var dataset: List<Story>
 //    private val addreadStories: (Story) -> Unit
 ) : RecyclerView.Adapter<AllStoriesAdapter.ItemViewHolder>() {
 
-    private var dataset: List<Story> = listOf()
 
     @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<Story>) {
