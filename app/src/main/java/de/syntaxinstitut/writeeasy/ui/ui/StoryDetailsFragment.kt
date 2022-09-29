@@ -43,7 +43,7 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val story = viewModel.stories.value?.find { it.ids == storyId }
+        val story = viewModel.storyList.value?.find { it.ids == storyId }
 
         binding.SaveButton.setOnClickListener{
             story?.saved = true
