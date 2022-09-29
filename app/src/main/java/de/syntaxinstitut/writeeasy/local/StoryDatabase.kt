@@ -9,6 +9,7 @@ import de.syntaxinstitut.writeeasy.data.model.Story
 
 @Database(entities = [Story::class], version = 1)
 abstract class StoryDatabase :  RoomDatabase() {
+
     abstract val storyDatabaseDao: StoryDatabaseDao
 }
 

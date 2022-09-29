@@ -1,6 +1,6 @@
 package de.syntaxinstitut.writeeasy.adapter
 
-import android.util.Log
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.net.toUri
@@ -10,8 +10,15 @@ import de.syntaxinstitut.writeeasy.data.model.Story
 import de.syntaxinstitut.writeeasy.databinding.AllstoriesListBinding
 
 class SavedStoriesAdapter(
-    private val dataset: List<Story>
 ) : RecyclerView.Adapter<SavedStoriesAdapter.ItemViewHolder>() {
+
+    private var dataset: List<Story> = listOf()
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun submitList(list: List<Story>) {
+        dataset = list
+        notifyDataSetChanged()
+    }
 
 
     class ItemViewHolder(val binding: AllstoriesListBinding) :
@@ -33,8 +40,7 @@ class SavedStoriesAdapter(
         val imgUri = item.photos.toUri().buildUpon().scheme("https").build()
 
 
-        Log.i("SavedAdapter", item.title)
-      //  holder.binding.StoryImage.setImageResource(item.photos)
+
         holder.binding.TitleText.text = item.title
         holder.binding.StoryImage.load(imgUri)
         holder.binding.DescritionText.text = item.description

@@ -20,5 +20,5 @@ data class Story(
     @Json(name = "Photos")
     val photos: String,
     var read: Boolean = false,
-    var clicked: Boolean = false
+    var saved: Boolean = false
 )

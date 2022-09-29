@@ -43,6 +43,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val stories: LiveData<List<Story>> = repository.storylist
     var readStories: LiveData<List<Story>> = MutableLiveData()
     val storyList = repositoryDB.storyList
+    var savedStories: LiveData<List<Story>> = MutableLiveData()
 
     fun insertStory(story: Story) {
         viewModelScope.launch {

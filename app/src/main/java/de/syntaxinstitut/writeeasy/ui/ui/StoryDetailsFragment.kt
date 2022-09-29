@@ -2,6 +2,7 @@ package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,6 +44,12 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val story = viewModel.stories.value?.find { it.ids == storyId }
+
+        binding.SaveButton.setOnClickListener{
+            story?.saved = true
+            Log.d("Saved:", story?.saved.toString())
+        }
+
 
         val imgUri = story!!.photos.toUri().buildUpon().scheme("https").build()
 

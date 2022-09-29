@@ -24,10 +24,6 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
     private val viewModel: MainViewModel by activityViewModels()
 
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
