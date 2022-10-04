@@ -8,7 +8,7 @@ import com.squareup.moshi.Json
 data class Story(
     @PrimaryKey
     @Json(name = "Ids")
-    val ids: String,
+    val ids: Int,
     @Json(name = "Title")
     val title: String,
     @Json(name = "Stories")

@@ -105,7 +105,7 @@
             app:destination="@id/record_kidsFragment" />
         <argument
             android:name="storyid"
-            app:argType="string" />
+            app:argType="integer" />
     </fragment>
     <fragment
         android:id="@+id/writingNew_KidsFragment"

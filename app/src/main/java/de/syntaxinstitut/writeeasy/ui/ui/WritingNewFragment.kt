@@ -49,7 +49,7 @@ class WritingNewFragment: Fragment(R.layout.fragment_writing) {
            val story = binding.storyText.text.toString()
            val title = binding.textInputLayout.toString()
            val description = story.subSequence(0, 80).toString()
-           viewModel.insertStory(Story(id.toString(), title, story, description, "Jan", R.drawable.bestfriends.toString()))
+           viewModel.insertStory(Story(id, title, story, description, "Jan", R.drawable.bestfriends.toString()))
            id ++
        }
     }

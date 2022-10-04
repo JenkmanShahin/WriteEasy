@@ -21,13 +21,13 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
 
     private val viewModel: MainViewModel by activityViewModels()
 
-    private var storyId: String = ""
+    private var storyId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         arguments?.let {
-            storyId = it.getString("storyid").toString()
+            storyId = it.getInt("storyid")
         }
     }
 
