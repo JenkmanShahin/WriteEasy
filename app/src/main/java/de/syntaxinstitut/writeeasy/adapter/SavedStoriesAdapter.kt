@@ -16,6 +16,12 @@ class SavedStoriesAdapter(
 
     @SuppressLint("NotifyDataSetChanged")
     fun submitList(list: List<Story>) {
+//        var savedList = mutableListOf<Story>()
+//        for (story in list) {
+//            if (story.saved == true) {
+//                savedList.add(story)
+//            }
+//        }
         dataset = list
         notifyDataSetChanged()
     }

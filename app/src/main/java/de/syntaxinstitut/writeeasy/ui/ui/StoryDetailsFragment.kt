@@ -43,7 +43,13 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val story = viewModel.storyList.value?.find { it.ids == storyId }
+        val story = viewModel.stories.value?.find { it.ids == storyId }
+
+
+        if (!viewModel.readStoriesList.contains(story!!)){
+            viewModel.readStoriesList.add(story)
+        }
+
 
         binding.SaveButton.setOnClickListener{
             story?.saved = true
@@ -51,15 +57,15 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
         }
 
 
-        val imgUri = story!!.photos.toUri().buildUpon().scheme("https").build()
+        val imgUri = story?.photos?.toUri()?.buildUpon()?.scheme("https")?.build()
 
         binding.CoverFrame.load(imgUri)
 
-     binding.StoryFrame.setOnClickListener{
-            findNavController().navigateUp()
+     binding.cancelButton.setOnClickListener{
+            findNavController().navigate(StoryDetailsFragmentDirections.actionStoryShowKidsFragmentToHomeKidsFragment())
        }
-        binding.TitleText.text = story.title
-        binding.storyText.text = story.stories
+        binding.TitleText.text = story?.title
+        binding.storyText.text = story?.stories
         binding.storyText.movementMethod = ScrollingMovementMethod()
     }
 }

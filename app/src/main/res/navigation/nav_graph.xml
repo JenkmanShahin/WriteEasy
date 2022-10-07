@@ -106,6 +106,9 @@
         <argument
             android:name="storyid"
             app:argType="integer" />
+        <action
+            android:id="@+id/action_storyShow_KidsFragment_to_homeKidsFragment"
+            app:destination="@id/homeKidsFragment" />
     </fragment>
     <fragment
         android:id="@+id/writingNew_KidsFragment"

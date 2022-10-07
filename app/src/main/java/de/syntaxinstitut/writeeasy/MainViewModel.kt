@@ -11,18 +11,26 @@ import com.google.firebase.auth.FirebaseUser
 import de.syntaxinstitut.writeeasy.data.Repository
 import de.syntaxinstitut.writeeasy.data.model.Story
 import de.syntaxinstitut.writeeasy.data.remote.StoryApi
-import de.syntaxinstitut.writeeasy.local.RepositoryDB
 import de.syntaxinstitut.writeeasy.local.getDatabase
 import kotlinx.coroutines.launch
 
-const val TAG = "MAINVIEWMODEL"
+const val TAG = "MainViewModel"
+
+enum class ApiStatus { LOADING, ERROR, DONE }
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val firebaseAuth = FirebaseAuth.getInstance()
-    private val repository = Repository(StoryApi)
     private val database = getDatabase(application)
-    private val repositoryDB = RepositoryDB(database,StoryApi)
+    private val repository = Repository(StoryApi, database)
+
+
+    private val _loading = MutableLiveData<ApiStatus>()
+    val loading: LiveData<ApiStatus>
+    get() = _loading
+
+    val stories = repository.storyList
+
 
    /* private val _readStories = MutableLiveData<List<ReadStories>>()
     val readStories: LiveData<List<ReadStories>>
@@ -40,18 +48,17 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val story: LiveData<List<ReadStories>>
     get() = _story*/
 
-    val stories: LiveData<List<Story>> = repository.storylist
-    var readStories: LiveData<List<Story>> = MutableLiveData()
-    val storyList: LiveData<List<Story>> = repositoryDB.storylist
+
+    var readStoriesList = mutableListOf<Story>()
+    var readStories: MutableLiveData<List<Story>> = MutableLiveData()
+    val storyList: LiveData<List<Story>> = repository.storyList
     var savedStories: LiveData<List<Story>> = MutableLiveData()
 
     fun insertStory(story: Story) {
         viewModelScope.launch {
-            repositoryDB.insert(story)
+            repository.insert(story)
         }
     }
-
-//    val inputText = MutableLiveData<String>()
 
 
 //    init {
@@ -72,7 +79,18 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun loadData() {
         viewModelScope.launch {
-            repositoryDB.getStories()
+            _loading.value = ApiStatus.LOADING
+            try {
+                repository.getStories()
+                _loading.value = ApiStatus.DONE
+            } catch (e:Exception) {
+                Log.e(TAG, "Error loading Data $e")
+                if (stories.value.isNullOrEmpty()) {
+                    _loading.value = ApiStatus.ERROR
+                } else {
+                    _loading.value = ApiStatus.DONE
+                }
+            }
         }
     }
 
@@ -92,11 +110,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
     }
 
-//    fun adtoFavs(story: Story) {
-//        viewModelScope.launch {
-//            repositoryDB.updateStory(story)
-//        }
-//    }
 
     fun register( email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{

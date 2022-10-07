@@ -49,7 +49,7 @@ class SavedFragment: Fragment(R.layout.saved_list) {
         viewModel.savedStories = MutableLiveData(filter?.filter { it.saved == true })
         Log.d("Saved:", viewModel.savedStories.value?.size.toString())
 
-        viewModel.readStories.observe(
+        viewModel.savedStories.observe(
             viewLifecycleOwner,
             Observer {
                 savedStories.submitList(it)

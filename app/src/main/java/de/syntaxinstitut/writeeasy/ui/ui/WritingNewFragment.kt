@@ -38,18 +38,13 @@ class WritingNewFragment: Fragment(R.layout.fragment_writing) {
         super.onViewCreated(view, savedInstanceState)
         
 
-//        binding.saStoryText.setOnClickListener{
-//            val story = binding.storyText.text
-//            val newStory = NewStory("Harry Poter", story, R.drawable.kid)
-//
-//        }
 
         var id = 12
        binding.saBtn.setOnClickListener{
            val story = binding.storyText.text.toString()
-           val title = binding.textInputLayout.toString()
+           val title = binding.textInputLayout.editText!!.text.toString()
            val description = story.subSequence(0, 80).toString()
-           viewModel.insertStory(Story(id, title, story, description, "Jan", R.drawable.bestfriends.toString()))
+           viewModel.insertStory(Story(title= title, stories = story, description = description, personName = "Jan", photos = R.drawable.bestfriends.toString()))
            id ++
        }
     }

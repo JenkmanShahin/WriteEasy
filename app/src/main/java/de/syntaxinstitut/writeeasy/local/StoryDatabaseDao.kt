@@ -10,8 +10,8 @@ interface StoryDatabaseDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(story: Story)
 
-    @Update
-    suspend fun updateStory(story: Story)
+    @Insert
+    suspend fun insertAll(story: List<Story>)
 
     @Update
     suspend fun update(story: Story)

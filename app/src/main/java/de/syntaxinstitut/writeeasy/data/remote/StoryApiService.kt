@@ -21,7 +21,8 @@ private val retrofit = Retrofit.Builder()
 interface StoryApiService{
 
     @GET("data.json")
-    suspend fun getStories(): List<Story>
+    suspend fun getStoryList(): List<Story>
+
 }
 
 object StoryApi {
