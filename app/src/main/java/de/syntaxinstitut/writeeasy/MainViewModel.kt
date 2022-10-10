@@ -31,32 +31,20 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     val stories = repository.storyList
 
+    var readStories = repository.readStoryList
 
-   /* private val _readStories = MutableLiveData<List<ReadStories>>()
-    val readStories: LiveData<List<ReadStories>>
-    get() = _readStories
+    var savedStories = repository.savedStoryList
 
-    private val _stories = MutableLiveData<List<Story>>()
-    val stories: LiveData<List<Story>>
-        get() = _stories
-
-    private val _myStories = MutableLiveData<List<MyStories>>()
-    val myStories: LiveData<List<MyStories>>
-    get() = _myStories
-
-    private val _story = MutableLiveData<List<ReadStories>>()
-    val story: LiveData<List<ReadStories>>
-    get() = _story*/
-
-
-    var readStoriesList = mutableListOf<Story>()
-    var readStories: MutableLiveData<List<Story>> = MutableLiveData()
-    val storyList: LiveData<List<Story>> = repository.storyList
-    var savedStories: LiveData<List<Story>> = MutableLiveData()
 
     fun insertStory(story: Story) {
         viewModelScope.launch {
             repository.insert(story)
+        }
+    }
+
+    fun updateStory(story: Story) {
+        viewModelScope.launch {
+            repository.update(story)
         }
     }
 

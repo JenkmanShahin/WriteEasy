@@ -18,4 +18,11 @@ interface StoryDatabaseDao {
 
     @Query("SELECT * FROM Story")
     fun getAll(): LiveData<List<Story>>
+
+    @Query("SELECT * FROM Story WHERE read = 1")
+    fun getAllRead(): LiveData<List<Story>>
+
+    @Query("SELECT * FROM Story WHERE saved = 1")
+    fun getAllSaved(): LiveData<List<Story>>
+
 }

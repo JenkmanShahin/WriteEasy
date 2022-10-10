@@ -48,17 +48,18 @@ class HomeFragment: Fragment(R.layout.fragment_home) {
         val readStories = ReadStoriesAdapter()
         binding.alreadyReadRecyclerView.adapter = readStories
 
-//       var filter: List<Story>? = viewModel.storyList.value
-//        viewModel.readStories = MutableLiveData(filter?.filter { it.read == true })
+//       var filter: List<Story>? = viewModel.stories.value
+//        Log.d("Read:", filter?.size.toString())
+//        viewModel.readStories = MutableLiveData(viewModel.readStoriesList)
 //          Log.d("Read:", viewModel.readStories.value?.size.toString())
-//
-//
-//        viewModel.readStories.observe(
-//            viewLifecycleOwner,
-//            Observer {
-//                readStories.submitList(it)
-//            }
-//        )
+
+
+        viewModel.readStories.observe(
+            viewLifecycleOwner,
+            Observer {
+                readStories.submitList(it)
+            }
+        )
 
 //        viewModel.stories.observe(
 //            viewLifecycleOwner,

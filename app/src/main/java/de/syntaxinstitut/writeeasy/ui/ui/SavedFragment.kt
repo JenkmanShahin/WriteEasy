@@ -45,9 +45,6 @@ class SavedFragment: Fragment(R.layout.saved_list) {
         val savedStories = SavedStoriesAdapter()
         binding.SavedRecyclerView.adapter = savedStories
 
-        var filter: List<Story>? = viewModel.stories.value
-        viewModel.savedStories = MutableLiveData(filter?.filter { it.saved == true })
-        Log.d("Saved:", viewModel.savedStories.value?.size.toString())
 
         viewModel.savedStories.observe(
             viewLifecycleOwner,

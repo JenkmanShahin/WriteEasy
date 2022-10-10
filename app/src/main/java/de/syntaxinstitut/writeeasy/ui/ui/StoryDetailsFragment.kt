@@ -2,7 +2,6 @@ package de.syntaxinstitut.writeeasy.ui.ui
 
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,14 +45,20 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
         val story = viewModel.stories.value?.find { it.ids == storyId }
 
 
-        if (!viewModel.readStoriesList.contains(story!!)){
-            viewModel.readStoriesList.add(story)
+
+            story?.read = true
+        if (story != null) {
+            viewModel.updateStory(story)
         }
+
+
 
 
         binding.SaveButton.setOnClickListener{
             story?.saved = true
-            Log.d("Saved:", story?.saved.toString())
+            if (story != null) {
+                viewModel.updateStory(story)
+            }
         }
 
 
