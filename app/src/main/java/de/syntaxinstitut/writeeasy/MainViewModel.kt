@@ -102,7 +102,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun register( email: String, password: String) {
         firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
             if (it.isSuccessful) {
-                register(email, password)
+                login(email, password)
             } else {
                 Log.e(TAG, "Registering failed: ${it.exception}")
             }

@@ -214,6 +214,16 @@
             app:layout_constraintTop_toTopOf="@+id/imageView3"
             app:srcCompat="@drawable/profilepic" />
 
+        <Button
+            android:id="@+id/button_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="120dp"
+            android:text="Log out"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+            app:layout_constraintEnd_toEndOf="parent" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

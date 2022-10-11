@@ -62,14 +62,5 @@ class StartFragment: Fragment() {
                 }
             }
 
-
-
-        binding.registerButton.setOnClickListener{
-            findNavController().navigate(StartFragmentDirections.actionStartFragmentToHomeKidsFragment())
-        }
-
-        binding.LogInButton.setOnClickListener{
-            findNavController().navigate(StartFragmentDirections.actionStartFragmentToHomeKidsFragment())
-        }
     }
 }

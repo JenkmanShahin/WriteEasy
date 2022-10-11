@@ -41,6 +41,15 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
 //            }
 //        )
 
+
+
+        binding.buttonLogout.setOnClickListener{
+            viewModel.logout()
+            if (viewModel.currentUser != null) {
+                findNavController().navigate(R.id.startFragment)
+            }
+        }
+
         binding.savedButtonP.setOnClickListener{
             findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
         }
@@ -54,6 +63,8 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
         binding.SaveButton.setOnClickListener{
             findNavController().navigate(ProfileFragmentDirections.actionProfileKidsFragmentToSavedKidsFragment())
         }
+
+
     }
 }
 
