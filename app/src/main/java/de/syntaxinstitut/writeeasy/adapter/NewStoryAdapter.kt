@@ -44,11 +44,6 @@ class NewStoryAdapter(
         holder.binding.TitleText.text = item.title
         holder.binding.CoverFrame.load(imgUri)
         holder.binding.storyText.text = item.toString()
-
-//        holder.binding.StoryFrame.setOnClickListener{
-//            holder.itemView.findNavController()
-//                .navigate(ProfileFragmentDirections.(item.toString()))
-//        }
     }
 
     override fun getItemCount(): Int {

@@ -25,13 +25,13 @@
             android:id="@+id/Name_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/risque"
             android:text="Joudi"
             android:textColor="#2523B7"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintHorizontal_bias="0.46"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
@@ -216,11 +216,17 @@
 
         <Button
             android:id="@+id/button_logout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="80dp"
+            android:layout_height="57dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="120dp"
+            android:backgroundTint="#BF692B"
+            android:fontFamily="@font/risque"
             android:text="Log out"
+            android:textColor="#0F32E1"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:cornerRadius="13.5dp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="parent" />
 

@@ -52,8 +52,6 @@ class StoryDetailsFragment: Fragment(R.layout.fragment_storydetails) {
         }
 
 
-
-
         binding.SaveButton.setOnClickListener{
             story?.saved = true
             if (story != null) {

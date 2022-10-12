@@ -14,9 +14,6 @@ class Repository(private val api: StoryApi, private val database: StoryDatabase)
     val readStoryList: LiveData<List<Story>> = database.storyDatabaseDao.getAllRead()
     val savedStoryList: LiveData<List<Story>> = database.storyDatabaseDao.getAllSaved()
 
-//    private val _storyList = MutableLiveData<List<Story>> ()
-//    val storylist: LiveData<List<Story>>
-//        get() = _storyList
 
     suspend fun insert(story: Story) {
         try {
@@ -35,13 +32,6 @@ class Repository(private val api: StoryApi, private val database: StoryDatabase)
             Log.e("Repository", "Failed to update into database: $e")
         }
     }
-
-
-//    private val _readStories = MutableLiveData<MutableList<Story>>()
-//    val readStories: LiveData<MutableList<Story>>
-//    get() = _readStories
-
-
 
     suspend fun getStories() {
         withContext(Dispatchers.IO) {

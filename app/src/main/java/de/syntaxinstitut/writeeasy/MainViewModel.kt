@@ -49,18 +49,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
 
-//    init {
-//        _stories.value = dataSource.loadStories()
-//
-//        _myStories.value = myStoriesDatasource.loadMyStories()
-//
-//        _readStories.value = readDataSource.loadReadStories()
-//    }
-
- //   init {
- //       _story.value = readDataSource.loadReadStories()
-  //  }
-
     init {
         loadData()
     }
@@ -89,7 +77,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
 
     fun login(email: String, password: String) {
-        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener{
+        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener{
             if (it.isSuccessful) {
                 _currentUser.value = firebaseAuth.currentUser
             } else{
@@ -111,6 +99,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun logout() {
         firebaseAuth.signOut()
+        println("currentUser = ${currentUser.value?.email}")
         _currentUser.value = firebaseAuth.currentUser
     }
 }
