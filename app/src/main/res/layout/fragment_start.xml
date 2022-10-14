@@ -32,7 +32,7 @@
             app:layout_constraintHorizontal_bias="0.32"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/startscreen" />
+            app:srcCompat="@drawable/startscreen_pic" />
 
         <ImageButton
             android:id="@+id/register_Button"
@@ -55,7 +55,7 @@
             app:layout_constraintHorizontal_bias="0.915"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/register_Button"
-            app:srcCompat="@drawable/start_login_buttonstart" />
+            app:srcCompat="@drawable/loginb" />
 
         <EditText
             android:id="@+id/Email_text"

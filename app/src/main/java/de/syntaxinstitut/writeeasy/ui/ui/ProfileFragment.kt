@@ -44,7 +44,7 @@ class ProfileFragment: Fragment(R.layout.fragment_profile) {
         }
 
         binding.savedButtonP.setOnClickListener{
-            findNavController().navigate(HomeFragmentDirections.actionHomeKidsFragmentToSavedKidsFragment())
+            findNavController().navigate(ProfileFragmentDirections.actionProfileKidsFragmentToSavedKidsFragment())
         }
 
         binding.homeButtonP.setOnClickListener{
